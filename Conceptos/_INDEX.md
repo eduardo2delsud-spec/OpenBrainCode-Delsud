@@ -26,3 +26,4 @@ SORT file.name ASC
 ## Relacionado
 
 - [[OpenBrainCode]] — hub general.
+

@@ -46,7 +46,7 @@ function Test-ProjectMarkers {
 }
 
 function Get-ProjectNotePath {
-    param([string]$Vault, [string]$Root, [string]$ProjPath)
+    param([string]$Vault, [string[]]$Root, [string]$ProjPath)
     $projName = Split-Path $ProjPath -Leaf
     foreach ($r in $Root) {
         $relTop = $ProjPath.Substring($r.Length).TrimStart('\', '/')

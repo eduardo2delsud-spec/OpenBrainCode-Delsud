@@ -15,7 +15,7 @@ $script = Join-Path $PSScriptRoot "indexar-sqlite.mjs"
 $node = (Get-Command node -ErrorAction SilentlyContinue).Source
 if (-not $node) { Write-Host "[error] node no encontrado."; exit 1 }
 
-$invocation = @($node, $script, "--vault", $VaultPath)
+$invocation = @($script, "--vault", $VaultPath)
 if ($Dry) { $invocation += "--dry" }
 
-& $invocation
+& $node @invocation
