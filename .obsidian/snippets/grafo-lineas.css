@@ -1,0 +1,9 @@
+.theme-dark, .theme-light {
+    --graph-line: #64748b;
+    --graph-arrow: #818cf8;
+    --graph-text: #94a3b8;
+}
+
+.graph-view.color-line { color: var(--graph-line) !important; }
+.graph-view.color-arrow { color: var(--graph-arrow) !important; }
+.graph-view.color-text { color: var(--graph-text) !important; }

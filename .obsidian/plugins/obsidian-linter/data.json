@@ -1,0 +1,37 @@
+{
+  "ruleConfigs": {
+    "yaml-title": true,
+    "yaml-timestamp": {
+      "format": "YYYY-MM-DD HH:mm"
+    },
+    "format-tags-in-yaml": {
+      "arrayFormat": "inline",
+      "removeHashtags": true
+    },
+    "add-blank-line-after-yaml": true,
+    "header-increment": true
+  },
+  "lintOnSave": true,
+  "recordLintOnSaveLogs": false,
+  "displayChanged": true,
+  "suppressMessageWhenNoChange": false,
+  "suppressLintAllFilesConfirmationModal": false,
+  "suppressLintAllFilesInFolderConfirmationModal": false,
+  "lintOnFileChange": false,
+  "displayLintOnFileChangeNotice": false,
+  "settingsConvertedToConfigKeyValues": true,
+  "additionalFileExtensions": [],
+  "foldersToIgnore": [],
+  "filesToIgnore": [],
+  "linterLocale": "system-default",
+  "logLevel": "ERROR",
+  "lintCommands": [],
+  "customRegexes": [],
+  "commonStyles": {
+    "aliasArrayStyle": "single-line",
+    "tagArrayStyle": "single-line",
+    "minimumNumberOfDollarSignsToBeAMathBlock": 2,
+    "escapeCharacter": "\"",
+    "removeUnnecessaryEscapeCharsForMultiLineArrays": false
+  }
+}

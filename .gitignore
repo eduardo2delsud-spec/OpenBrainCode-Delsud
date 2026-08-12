@@ -1,0 +1,20 @@
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Datos locales del vault (no versionar contenido del grafo)
+_Inbox/.gitkeep
+
+# Config local operativa (la canónica vive en _Config/)
+/opencode.json
+/AGENTS.md
+
+# Estado del indexador (delta cache) — no versionar
+_Config/.opencode/.cache/
+_Config/.opencode/scripts/.cache/
+
+# Espejo SQLite del vault (dato derivado, regenerable con indexar-sqlite)
+/openbraincode.db
