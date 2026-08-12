@@ -12,7 +12,7 @@ tags: [acierto, herramienta, opencode, mcp, setup]
 
 ## Qué pasó
 
-- Se creó `~/.config/opencode/opencode.json` (instrucciones, skills, agentes con `{file:...}`, plugins `vault-sync`/`automas`/`brain-guard`, comandos `indexar-sqlite`/`ordenar-brain`, MCP `openbraincode-kg`).
+- Se creó `~/.config/opencode/opencode.jsonc` (instrucciones, skills, agentes con `{file:...}`, plugins `vault-sync`/`automas`/`brain-guard`, comandos `indexar-sqlite`/`ordenar-brain`, MCP `openbraincode-kg`). Se conservó el nombre `.jsonc` que ya existía en la máquina; `opencode debug config` confirmó que carga todo sin warnings.
 - MCP knowledge-graph clonado como hermano del vault, `npm install`, fix del bug `z.record(z.unknown())` → `z.object({}).catchall(z.unknown()).optional()` en `src/mcp/index.ts`; `kg.db` en `~/.local/share/knowledge-graph/` (fuera del vault, no versionado). Índice: 38 nodos / 135 aristas / 10 comunidades.
 - Indexado del vault: 17 proyectos scrapeados + fichas en `Proyectos/<grupo>/<nombre>/`, `Proyectos/_INDEX.md` manual para enlazar, espejo SQLite `openbraincode.db`. Auditoría final: 0 enlaces rotos, 0 huérfanos, exit 0.
 
