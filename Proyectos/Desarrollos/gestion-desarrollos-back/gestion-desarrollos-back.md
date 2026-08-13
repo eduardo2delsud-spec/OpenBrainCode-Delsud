@@ -5,7 +5,7 @@ path: C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back
 stack: []
 arch: simple
 dominio: indefinido
-updated: 2026-08-12
+updated: 2026-08-13
 ---
 
 # gestion-desarrollos-back
