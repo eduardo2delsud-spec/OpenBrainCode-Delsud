@@ -19,8 +19,8 @@ Técnica que permite ejecutar dos versiones del mismo código simultáneamente p
 
 ## Conceptos relacionados
 
-- [[Conceptos/Full-scan]] — el patrón se aplica para medir impacto de eliminar full-scans.
+- [[Conceptos/full-scan]] — el patrón se aplica para medir impacto de eliminar full-scans.
 
 ## Lecciones
 
-- [[Lecciones/Bench A-B con seed idempotente y marker]] — el seed debe ser idempotente y usar markers para cleanup.
+- [[Lecciones/bench-a-b-con-seed-idempotente-y-marker]] — el seed debe ser idempotente y usar markers para cleanup.

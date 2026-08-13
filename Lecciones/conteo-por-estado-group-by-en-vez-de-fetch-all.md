@@ -25,5 +25,5 @@ Cuando necesitás contar registros por estado (por ejemplo, reservas por status)
 
 ## Relacionado
 
-- [[Conceptos/Full-scan]]
-- [[Patrones/Bench A-B con git worktree]]
+- [[Conceptos/full-scan]]
+- [[Patrones/bench-a-b-con-git-worktree]]

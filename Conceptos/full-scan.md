@@ -19,8 +19,8 @@ Un full-scan (o full table scan) es cuando el motor de base de datos lee cada fi
 
 ## Patrones relacionados
 
-- [[Patrones/Bench A-B con git worktree]] — para medir el impacto de eliminar full-scans.
+- [[Patrones/bench-a-b-con-git-worktree]] — para medir el impacto de eliminar full-scans.
 
 ## Lecciones
 
-- [[Lecciones/Conteo por estado: GROUP BY en vez de fetch-all]] — reemplazar full-scan por GROUP BY.
+- [[Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all]] — reemplazar full-scan por GROUP BY.

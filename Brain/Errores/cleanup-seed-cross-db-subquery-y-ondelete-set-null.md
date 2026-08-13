@@ -60,4 +60,4 @@ tags: [error, data, gestion-desarrollos, backend, bench, sql]
 ## Relacionado
 
 - [[Brain/Aciertos/reservations-groupby-summary-batch-ensurelocal-limit]] — el acierto que motivó el harness.
-- [[Lecciones/Bench A-B con seed idempotente y marker]] — si se promueve a lección curada.
+- [[Lecciones/bench-a-b-con-seed-idempotente-y-marker]] — si se promueve a lección curada.

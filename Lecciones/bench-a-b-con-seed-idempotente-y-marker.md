@@ -26,5 +26,5 @@ Cuando creás datos sintéticos para benchmarks, el seed debe poder ejecutarse m
 
 ## Relacionado
 
-- [[Patrones/Bench A-B con git worktree]]
+- [[Patrones/bench-a-b-con-git-worktree]]
 - [[Brain/Errores/cleanup-seed-cross-db-subquery-y-ondelete-set-null]]

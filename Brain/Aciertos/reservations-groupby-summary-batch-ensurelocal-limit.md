@@ -50,5 +50,5 @@ Medido con bench A/B (harness en `scripts/bench/`): 6 escenarios EQ OK, listado 
 
 ## Relacionado
 
-- [[Conceptos/Full-scan]] · [[Patrones/Bench A-B con git worktree]]
-- [[Lecciones/Conteo por estado: GROUP BY en vez de fetch-all]]
+- [[Conceptos/full-scan]] · [[Patrones/bench-a-b-con-git-worktree]]
+- [[Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all]]

@@ -201,6 +201,10 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Brain/Aciertos/revision-vault-limpieza-enlaces.md",
+    "Worklog/OpenBrainCode/2026-08-13.md",
+    "Worklog/OpenBrainCode",
+    "Worklog",
     "Lecciones/bench-a-b-con-seed-idempotente-y-marker.md",
     "Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all.md",
     "Patrones/bench-a-b-con-git-worktree.md",
@@ -222,9 +226,7 @@
     "Proyectos/Zentinel/Zentinel.md",
     "Proyectos/Zentinel",
     "Proyectos/knowledge-graph/knowledge-graph.md",
-    "Proyectos/knowledge-graph",
     "Proyectos/Flexy/flexy-web-2026/flexy-web-2026.md",
-    "Proyectos/Flexy/flexy-web-2026",
     "Proyectos/Flexy/flexy-panel-2026/flexy-panel-2026.md",
     "Proyectos/Flexy/flexy-back-notification-2026/flexy-back-notification-2026.md",
     "Proyectos/Flexy/flexy-back-2026/flexy-back-2026.md",
@@ -235,8 +237,6 @@
     "Proyectos/Desarrollos/crm-front/crm-front.md",
     "Proyectos/Desarrollos/crm-back/crm-back.md",
     "Proyectos/APIA/apia-social-front/apia-social-front.md",
-    "Proyectos/APIA/apia-social-dashboard/apia-social-dashboard.md",
-    "Proyectos/APIA/apia-social-chat-and-notification-microservice/apia-social-chat-and-notification-microservice.md",
     "Sin título.canvas"
   ]
 }
