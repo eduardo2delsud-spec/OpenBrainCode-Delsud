@@ -20,10 +20,11 @@ SORT file.name ASC
 
 ## Registro
 
-- (vacío — el script no encontró notas)
+- [[Conceptos/full-scan]] — Full-scan  (category: rendimiento · updated: 2026-08-13)
 <!-- /AUTO -->
 
 ## Relacionado
 
 - [[OpenBrainCode]] — hub general.
+
 

@@ -201,6 +201,10 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Lecciones/bench-a-b-con-seed-idempotente-y-marker.md",
+    "Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all.md",
+    "Patrones/bench-a-b-con-git-worktree.md",
+    "Conceptos/full-scan.md",
     "Brain/Errores/ipc-case-sin-when-sql-invalido.md",
     "Brain/Errores/drizzle-alias-faltante-subquery-sql.md",
     "_Config/Meta/Update",
@@ -233,10 +237,6 @@
     "Proyectos/APIA/apia-social-front/apia-social-front.md",
     "Proyectos/APIA/apia-social-dashboard/apia-social-dashboard.md",
     "Proyectos/APIA/apia-social-chat-and-notification-microservice/apia-social-chat-and-notification-microservice.md",
-    "Proyectos/APIA/apia-social-back/apia-social-back.md",
-    "Proyectos/APIA/apia-social-ads-microservice/apia-social-ads-microservice.md",
-    "Proyectos/DelSud/Zentinel/Zentinel.md",
-    "Proyectos/DelSud/knowledge-graph/knowledge-graph.md",
     "Sin título.canvas"
   ]
 }

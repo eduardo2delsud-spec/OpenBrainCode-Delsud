@@ -20,10 +20,12 @@ SORT file.name ASC
 
 ## Registro
 
-- (vacío — el script no encontró notas)
+- [[Lecciones/bench-a-b-con-seed-idempotente-y-marker]] — Bench A-B con seed idempotente y marker  (category: testing · updated: 2026-08-13)
+- [[Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all]] — Conteo por estado: GROUP BY en vez de fetch-all  (category: rendimiento · updated: 2026-08-13)
 <!-- /AUTO -->
 
 ## Relacionado
 
 - [[OpenBrainCode]] — hub general.
+
 
