@@ -201,6 +201,7 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Brain/Errores/ipc-case-sin-when-sql-invalido.md",
     "Brain/Errores/drizzle-alias-faltante-subquery-sql.md",
     "_Config/Meta/Update",
     "_Config/Meta",
@@ -236,7 +237,6 @@
     "Proyectos/APIA/apia-social-ads-microservice/apia-social-ads-microservice.md",
     "Proyectos/DelSud/Zentinel/Zentinel.md",
     "Proyectos/DelSud/knowledge-graph/knowledge-graph.md",
-    "Proyectos/flexy-back-notification-2026/flexy-back-notification-2026.md",
     "Sin título.canvas"
   ]
 }
