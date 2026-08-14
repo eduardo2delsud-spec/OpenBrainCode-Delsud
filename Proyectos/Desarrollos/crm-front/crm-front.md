@@ -2,34 +2,48 @@
 type: proyecto
 project: crm-front
 path: C:\Users\edu\Desktop\DelSud\Desarrollos\crm-front
-stack: []
+stack:
+  - React
+  - Vite
+  - MaterialUI
+  - Redux Toolkit
+  - Zustand
 arch: simple
-dominio: indefinido
-updated: 2026-08-12
+dominio: inmobiliario-gestion
+updated: 2026-08-14
 ---
 
 # crm-front
 
-> 
+> Panel de administración del sistema CRM de Grupodelsud (React 18 + Vite 5 + MUI 5), para la gestión de leads, clientes, desarrollos y reservas, que consume `crm-back`.
 
 ## Qué hace
 
-- (describir en una línea; lo completa el skill)
+SPA de administración del CRM: oportunidades/leads, clientes, desarrollos y lotes, reservas (wizard de 5 pasos), usuarios (CRM y Gestión), documentación, zonas, datos/targets y estadísticas. Consume la API de `crm-back` (`VITE_URL_API`, puerto 4005).
 
 ## Estado actual
 
-- (estado actual: en desarrollo / mantenido / archivo)
+En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). ADR-003/004 reconstruidos en el vault.
 
-<!-- AUTO: cuerpo factual generado por generar-ficha.ps1 (no editar) -->
 ## Stack
 
 | Capa | Tecnología | Detalle |
 |------|-----------|---------|
+| Frontend | React 18 / Vite 5 / MUI 5 | SPA, lazy loading, terser + chunk splitting |
+| Estado servidor | Redux Toolkit (10 slices) + thunks | clientes, desarrollos, ficha, home, docs, service, zones, datos |
+| Estado local | Zustand (5 stores) | bookings, bookingsAdmin, contacts, users, gestionUsers |
+| Routing | React Router 7 | createBrowserRouter |
+| Formularios | Formik + Yup | validación |
+| HTTP | Axios | interceptor JWT, redirección a /login |
+| Mapas/gráficos/PDF | Leaflet · ApexCharts · pdfmake/@react-pdf | |
+| Calidad | ESLint (react-app) + Prettier | |
 
 ## Comandos útiles
 
 ```bash
-(sin scripts detectados)
+npm run dev            # desarrollo (Vite)
+npm run build          # build producción (terser, chunk splitting)
+npm run preview        # vista previa del build
 ```
 
 ## Arquitectura
@@ -45,13 +59,20 @@ top_folders:
 
 ## Servicios y puertos
 
-- (sin docker-compose detectado)
+| Servicio | Puerto | Descripción |
+|----------|--------|-------------|
+| crm-front (SPA) | 5173 (dev) | Frontend Vite; consume crm-back en 4005 |
 
 ## Agentes opencode
 
 - (sin agentes opencode)
 <!-- /AUTO -->
 
+## Documentación
+
+- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\crm-front\docs\README.md`): arquitectura, routing, módulos, data layer, API/integración, deployment.
+- `Decisiones/` — ADR-003 (validación MIME en DragDrop) y ADR-004 (reseteo de `fichaData`).
+- `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
 
@@ -63,7 +84,8 @@ top_folders:
 
 ## Decisiones clave
 
-- (por completar)
+- [[Proyectos/Desarrollos/crm-front/Decisiones/ADR-003-validacion-mime-dragdrop]] — validación programática de tipos MIME en subida de archivos.
+- [[Proyectos/Desarrollos/crm-front/Decisiones/ADR-004-reset-estado-redux-fichaData]] — reseteo de `fichaData` entre navegaciones de reservas.
 
 ## Lecciones
 
@@ -71,8 +93,9 @@ top_folders:
 
 ## Dónde buscar más
 
-- (por completar)
+- `docs/` del servicio (arquitectura, routing, módulos, data layer, API/integración, deployment).
+- Backend consumido: `crm-back`.
 
 ## Historial (worklog)
 
-- (por completar)
+- [[Proyectos/Desarrollos/crm-front/Worklog/2026-08-14]] — documentación centralizada + README + ADRs reconstruidos en el vault.

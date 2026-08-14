@@ -201,6 +201,13 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Proyectos/Desarrollos/crm-front/Worklog/2026-08-14.md",
+    "Proyectos/Desarrollos/crm-front/Worklog",
+    "Proyectos/Desarrollos/crm-back/Worklog/2026-08-14.md",
+    "Proyectos/Desarrollos/crm-back/Worklog",
+    "Proyectos/Desarrollos/crm-front/Decisiones/ADR-004-reset-estado-redux-fichaData.md",
+    "Proyectos/Desarrollos/crm-front/Decisiones/ADR-003-validacion-mime-dragdrop.md",
+    "Proyectos/Desarrollos/crm-front/Decisiones",
     "Brain/Aciertos/revision-vault-limpieza-enlaces.md",
     "Worklog/OpenBrainCode/2026-08-13.md",
     "Worklog/OpenBrainCode",
@@ -219,12 +226,9 @@
     "openbraincode.db-shm",
     "openbraincode.db-wal",
     "openbraincode.db-journal",
-    "openbraincode.db",
     "Proyectos/_INDEX.md",
     "Proyectos/Zimula/Zimula.md",
-    "Proyectos/Zimula",
     "Proyectos/Zentinel/Zentinel.md",
-    "Proyectos/Zentinel",
     "Proyectos/knowledge-graph/knowledge-graph.md",
     "Proyectos/Flexy/flexy-web-2026/flexy-web-2026.md",
     "Proyectos/Flexy/flexy-panel-2026/flexy-panel-2026.md",
@@ -233,10 +237,6 @@
     "Proyectos/Flexy/flexy-back/flexy-back.md",
     "Proyectos/Desarrollos/TestPerformance/TestPerformance.md",
     "Proyectos/Desarrollos/gestion-desarrollos-back/gestion-desarrollos-back.md",
-    "Proyectos/Desarrollos/gestion-desarrollos/gestion-desarrollos.md",
-    "Proyectos/Desarrollos/crm-front/crm-front.md",
-    "Proyectos/Desarrollos/crm-back/crm-back.md",
-    "Proyectos/APIA/apia-social-front/apia-social-front.md",
     "Sin título.canvas"
   ]
 }
