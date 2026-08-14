@@ -96,4 +96,4 @@ top_folders:
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] — documentación centralizada + README + resolución de conflicto de changelog.
+- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] — documentación centralizada + README + resolución de conflicto de changelog + limpieza de dependencias sin uso.
