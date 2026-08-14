@@ -2,34 +2,48 @@
 type: proyecto
 project: gestion-desarrollos
 path: C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos
-stack: []
+stack:
+  - React
+  - Vite
+  - MaterialUI
+  - TanStack Query
+  - Zustand
 arch: simple
-dominio: indefinido
-updated: 2026-08-12
+dominio: inmobiliario-gestion
+updated: 2026-08-14
 ---
 
 # gestion-desarrollos
 
-> 
+> SPA de administración de la plataforma de Gestión de Desarrollos de Grupodelsud (React 18 + Vite 5 + MUI 7), que consume `gestion-desarrollos-back`.
 
 ## Qué hace
 
-- (describir en una línea; lo completa el skill)
+Panel de administración con dos áreas — **Administración** (clientes, reservas, boletos, lotes, caja, usuarios) y **Cobranza** (caja, stock, clientes, índices/IPC) — sobre la API REST de `gestion-desarrollos-back` (`/api/v1`, puerto 4001). Estado de servidor con TanStack Query, estado local con Zustand/Context, UI con MUI 7.
 
 ## Estado actual
 
-- (estado actual: en desarrollo / mantenido / archivo)
+En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). El `docs/` previo se limpió en el commit `c8e9dfd`.
 
-<!-- AUTO: cuerpo factual generado por generar-ficha.ps1 (no editar) -->
 ## Stack
 
 | Capa | Tecnología | Detalle |
 |------|-----------|---------|
+| Frontend | React 18 / Vite 5 / MUI 7 | SPA, lazy loading, chunk splitting (terser) |
+| Estado servidor | TanStack Query 5 | staleTime 5 min, retry sin 401/403 |
+| Estado local | Zustand + React Context | usersStore, authContext, sideNavContext |
+| Routing | React Router 7 | createBrowserRouter |
+| Formularios | Formik + Yup | validación |
+| HTTP | Axios | interceptor JWT, redirección a /login |
+| Calidad | ESLint 9 (flat) + Prettier | lint/format |
 
 ## Comandos útiles
 
 ```bash
-(sin scripts detectados)
+npm run dev            # desarrollo (Vite)
+npm run build          # build producción (chunk splitting)
+npm run lint           # ESLint
+npm run format         # Prettier
 ```
 
 ## Arquitectura
@@ -39,20 +53,25 @@ workspace: none
 arch: simple
 top_folders:
   docs
-  obsidian
   public
   src
 ```
 
 ## Servicios y puertos
 
-- (sin docker-compose detectado)
+| Servicio | Puerto | Descripción |
+|----------|--------|-------------|
+| gestion-desarrollos (SPA) | 5173 (dev) | Frontend Vite; consume back en 4001 |
 
 ## Agentes opencode
 
 - (sin agentes opencode)
 <!-- /AUTO -->
 
+## Documentación
+
+- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos\docs\README.md`): arquitectura, routing, módulos, data layer, API/integración, deployment.
+- `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
 
@@ -72,8 +91,9 @@ top_folders:
 
 ## Dónde buscar más
 
-- (por completar)
+- `docs/` del servicio (arquitectura, routing, módulos, data layer, API/integración, deployment).
+- Backend consumido: `gestion-desarrollos-back`.
 
 ## Historial (worklog)
 
-- (por completar)
+- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] — documentación centralizada + README + resolución de conflicto de changelog.

@@ -2,34 +2,50 @@
 type: proyecto
 project: gestion-desarrollos-back
 path: C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back
-stack: []
+stack:
+  - Express
+  - Drizzle
+  - MySQL
+  - TypeScript
+  - JWT
 arch: simple
-dominio: indefinido
-updated: 2026-08-13
+dominio: inmobiliario-gestion
+updated: 2026-08-14
 ---
 
 # gestion-desarrollos-back
 
-> 
+> Backend del sistema de Gestión de Desarrollos de Grupodelsud: reservas, contratos, cuotas, caja y flujo de cobranza, integrado con el CRM inmobiliario.
 
 ## Qué hace
 
-- (describir en una línea; lo completa el skill)
+API REST (Express 5 + TypeScript + Drizzle ORM) sobre **MySQL dual** (DB local de gestión + DB del CRM como referencia/escrituras acotadas). Cubre el ciclo de reservas y certificación de boletos, contratos y refinanciación, cuotas/pagos, caja y cobranza, dashboard, lotes, IPC, reclamos, stock, notificaciones, historial, email (SendGrid) y almacenamiento S3. Prefijo `/api/v1`, puerto `4001`.
 
 ## Estado actual
 
-- (estado actual: en desarrollo / mantenido / archivo)
+En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). Últimas versiones orientadas a optimización de queries (fin de N+1, batch, cache TTL, índices) — ver CHANGELOG.
 
-<!-- AUTO: cuerpo factual generado por generar-ficha.ps1 (no editar) -->
 ## Stack
 
 | Capa | Tecnología | Detalle |
 |------|-----------|---------|
+| Backend | Node.js 20+ / Express 5 / TypeScript 5 | API REST, `/api/v1`, puerto 4001 |
+| Persistencia | Drizzle ORM + mysql2 | MySQL dual: local (`gestion_desarrollos_{dev,test,prod}`) + CRM |
+| Auth | JWT + bcryptjs | `verifyAccessToken` + RBAC (`requireRole`) |
+| Validación | Joi | `validateSchema` + fail-fast de env |
+| Integraciones | AWS S3, SendGrid, node-cron | Presigned URLs, email transaccional, cron diario 00:01 |
+| Calidad | Biome, esbuild + tsc-alias | lint/format/check, build |
 
 ## Comandos útiles
 
 ```bash
-(sin scripts detectados)
+npm run dev              # desarrollo (tsx watch)
+npm run build            # esbuild + tsc-alias + copy-assets
+npm run typecheck        # tsc --noEmit
+npm run db:migrate       # migraciones locales
+npm run db:seed          # datos base
+npm run db:up            # esquema dev
+npm run check            # Biome
 ```
 
 ## Arquitectura
@@ -48,13 +64,19 @@ top_folders:
 
 ## Servicios y puertos
 
-- (sin docker-compose detectado)
+| Servicio | Puerto | Descripción |
+|----------|--------|-------------|
+| gestion-desarrollos-back | 4001 | API Express (`/api/v1`) |
 
 ## Agentes opencode
 
 - (sin agentes opencode)
 <!-- /AUTO -->
 
+## Documentación
+
+- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, integraciones, entorno.
+- `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
 
@@ -74,8 +96,9 @@ top_folders:
 
 ## Dónde buscar más
 
-- (por completar)
+- `docs/` del servicio (arquitectura, módulos, endpoints, base de datos, integraciones, entorno).
+- `postman/DESARROLLOS-GESTION.postman_collection.json` — colección de la API.
 
 ## Historial (worklog)
 
-- (por completar)
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] — documentación centralizada + README.
