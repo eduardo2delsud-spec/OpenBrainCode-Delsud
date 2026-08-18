@@ -49,6 +49,10 @@ SORT project ASC
 - [[Proyectos/Zentinel/Zentinel]]
 - [[Proyectos/Zimula/Zimula]]
 
+### VIZTA
+
+- [[Proyectos/VIZTA/VIZTA]] — plataforma comercial de terrenos y lotes (PBL + flujos + ADRs; en definición)
+
 ## Relacionado
 
 - [[OpenBrainCode]] — hub general.

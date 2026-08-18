@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267.5
+    "width": 267.5,
+    "collapsed": true
   },
   "right": {
     "id": "920057f69e43a979",
@@ -200,6 +201,12 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Proyectos/VIZTA/Decisiones/README.md",
+    "Proyectos/VIZTA/Decisiones",
+    "Proyectos/VIZTA/Worklog/2026-08-18.md",
+    "Proyectos/VIZTA/Worklog",
+    "Proyectos/VIZTA/VIZTA.md",
+    "Proyectos/VIZTA",
     "Proyectos/Desarrollos/crm-back/Worklog/2026-08-18.md",
     "Brain/Aciertos/env-centralizado-config-joi-fail-fast.md",
     "Patrones/Convencion variables de entorno.md",
@@ -229,13 +236,7 @@
     "Brain/Aciertos/primer-inicio-funcional.md",
     "Brain/Errores/sqlite-invocation-array.md",
     "Brain/Errores/indexar-todo-multi-raiz.md",
-    "openbraincode.db-shm",
-    "openbraincode.db-wal",
-    "openbraincode.db-journal",
     "Proyectos/_INDEX.md",
-    "Proyectos/Zimula/Zimula.md",
-    "Proyectos/Zentinel/Zentinel.md",
-    "Proyectos/knowledge-graph/knowledge-graph.md",
     "Sin título.canvas"
   ]
 }
