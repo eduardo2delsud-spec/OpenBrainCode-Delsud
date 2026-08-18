@@ -10,7 +10,7 @@ stack:
   - MySQL
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-14
+updated: 2026-08-18
 ---
 
 # crm-back
@@ -74,7 +74,8 @@ top_folders:
 
 ## Documentación
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\crm-back\docs\README.md`): arquitectura, catálogo de endpoints, base de datos, módulos, integraciones y entorno.
+- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\crm-back\docs\README.md`): arquitectura, catálogo de endpoints, base de datos, diagramas ER, módulos, integraciones y entorno.
+- `docs/diagrams.md` — diagramas entidad-relación (Mermaid): DB CRM (25 tablas + pivotes), DB Gestión y puente de sincronización (2026-08-18).
 - `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
@@ -100,4 +101,5 @@ top_folders:
 
 ## Historial (worklog)
 
+- [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-18]] — diagramas entidad-relación (Mermaid) + enlaces en docs.
 - [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-14]] — documentación centralizada + README actualizado.

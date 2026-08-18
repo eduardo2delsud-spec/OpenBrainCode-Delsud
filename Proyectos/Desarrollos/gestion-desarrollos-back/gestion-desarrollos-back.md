@@ -75,7 +75,7 @@ top_folders:
 
 ## Documentación
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, integraciones, entorno.
+- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, diagramas ER, integraciones, entorno.
 - `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
@@ -101,5 +101,5 @@ top_folders:
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] — estandarización de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md`.
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] — estandarización de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md` + diagramas entidad-relación en `docs/diagrams.md` (ER DB local, ER CRM, puente local↔CRM).
 - [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] — documentación centralizada + README.
