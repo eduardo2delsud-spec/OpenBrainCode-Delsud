@@ -1,7 +1,7 @@
 ﻿---
 type: index
 area: Patrones
-updated: 2026-08-12
+updated: 2026-08-18
 ---
 
 # Patrones — Índice
@@ -21,6 +21,7 @@ SORT file.name ASC
 ## Registro
 
 - [[Patrones/bench-a-b-con-git-worktree]] — Bench A-B con git worktree  (category: rendimiento · updated: 2026-08-13)
+- [[Patrones/Convencion variables de entorno]] — Convención variables de entorno  (category: arquitectura · updated: 2026-08-18)
 <!-- /AUTO -->
 
 ## Relacionado

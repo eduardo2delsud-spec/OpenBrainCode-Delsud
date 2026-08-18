@@ -79,7 +79,7 @@ top_folders:
 
 ## Patrones que sigue
 
-- (por completar)
+- [[Patrones/Convencion variables de entorno]] — env vars solo vía `import.meta.env.VITE_*` (nunca `process.env`), documentadas en `.env.example` y `docs/deployment.md` (2026-08-18).
 
 ## Decisiones clave
 
@@ -96,5 +96,5 @@ top_folders:
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-18]] — limpieza de dead code del frontend (archivos muertos, barrels huérfanos, assets de `public/` sin uso, `@mui/system` removido, `globals` agregado, hook `useClientDebtSummary` eliminado) + optimización de chunk splitting: `manualChunks` sin `pdfmake`/`charts`/`reactCharts` y `sideNav` sin barrel → `pdfmake`/`vfs_fonts`/`react-apexcharts` lazy real, arranque -77% gzip (~298 kB vs ~1322 kB).
+- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-18]] — limpieza de dead code del frontend (archivos muertos, barrels huérfanos, assets de `public/` sin uso, `@mui/system` removido, `globals` agregado, hook `useClientDebtSummary` eliminado) + optimización de chunk splitting: `manualChunks` sin `pdfmake`/`charts`/`reactCharts` y `sideNav` sin barrel → `pdfmake`/`vfs_fonts`/`react-apexcharts` lazy real, arranque -77% gzip (~298 kB vs ~1322 kB) + estandarización de variables de entorno: `VITE_AWS_BUCKET_URL` documentada (fallback bucket real `desarrollos-br/desarrollos-crm/`), `VITE_APP_ENVIROMENT` eliminada, unificado `import.meta.env.VITE_*`, fallback de `VITE_URL_API` → `:4001`.
 - [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] — documentación centralizada + README + resolución de conflicto de changelog + limpieza de dependencias sin uso.

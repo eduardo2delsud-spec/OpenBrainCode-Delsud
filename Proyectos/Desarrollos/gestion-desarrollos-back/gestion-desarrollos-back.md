@@ -10,7 +10,7 @@ stack:
   - JWT
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-14
+updated: 2026-08-18
 ---
 
 # gestion-desarrollos-back
@@ -84,7 +84,7 @@ top_folders:
 
 ## Patrones que sigue
 
-- (por completar)
+- [[Patrones/Convencion variables de entorno]] — `config.ts` centraliza y valida env con Joi (fail-fast), `AWS_*` opcional en dev, matriz por ambiente en `docs/entorno.md` (2026-08-18).
 
 ## Decisiones clave
 
@@ -101,4 +101,5 @@ top_folders:
 
 ## Historial (worklog)
 
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] — estandarización de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md`.
 - [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] — documentación centralizada + README.
