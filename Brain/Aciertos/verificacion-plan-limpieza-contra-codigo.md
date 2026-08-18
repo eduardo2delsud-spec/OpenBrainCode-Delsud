@@ -46,4 +46,4 @@ tags: [acierto, herramienta, dead-code, limpieza, verificacion, plan]
 
 ## Relacionado
 
-- [[Brain/Errores/...]] — si en el futuro un plan stale causa un bug, registrarlo acá como contraejemplo.
+- [[Brain/Aciertos/revision-vault-limpieza-enlaces]] — revisión de limpieza de enlaces del vault (relacionado). Si en el futuro un plan stale causa un bug, registrar el contraejemplo en `Brain/Errores/`.

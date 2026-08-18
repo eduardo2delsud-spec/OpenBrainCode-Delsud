@@ -33,8 +33,8 @@ Un enfoque por capas para manejar env vars con **un solo punto de entrada valida
 
 ## Conceptos relacionados
 
-- [[Conceptos/Template Concepto]]
+- Registro crudo del acierto que originó este patrón: [[Brain/Aciertos/env-centralizado-config-joi-fail-fast]].
 
 ## Lecciones
 
-- [[Lecciones/Template Lección]]
+- (sin lecciones curadas aún)

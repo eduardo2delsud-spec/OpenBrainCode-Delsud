@@ -201,6 +201,12 @@
   },
   "active": "d17239a4d56ef6ed",
   "lastOpenFiles": [
+    "Conceptos/diferenciacion-de-fondos.md",
+    "Conceptos/boleto-financiado.md",
+    "Conceptos/garante-y-cogarante.md",
+    "Conceptos/ajuste-por-ipc.md",
+    "Conceptos/rotacion-equitativa.md",
+    "Conceptos/pago-verificado-por-pasarela.md",
     "Proyectos/VIZTA/Decisiones/README.md",
     "Proyectos/VIZTA/Decisiones",
     "Proyectos/VIZTA/Worklog/2026-08-18.md",
@@ -229,14 +235,8 @@
     "Lecciones/conteo-por-estado-group-by-en-vez-de-fetch-all.md",
     "Patrones/bench-a-b-con-git-worktree.md",
     "Conceptos/full-scan.md",
-    "Brain/Errores/ipc-case-sin-when-sql-invalido.md",
-    "Brain/Errores/drizzle-alias-faltante-subquery-sql.md",
     "_Config/Meta/Update",
     "_Config/Meta",
-    "Brain/Aciertos/primer-inicio-funcional.md",
-    "Brain/Errores/sqlite-invocation-array.md",
-    "Brain/Errores/indexar-todo-multi-raiz.md",
-    "Proyectos/_INDEX.md",
     "Sin título.canvas"
   ]
 }
