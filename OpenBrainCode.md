@@ -1,6 +1,6 @@
 ﻿---
 type: hub
-updated: 2026-08-12
+updated: 2026-08-19
 ---
 
 > Segundo cerebro para registrar proyectos de software: qué hacen, cómo están hechos, con qué tecnologías y cómo encontrarlos rápido.
@@ -30,6 +30,7 @@ Cada proyecto vive en su **carpeta propia** en `Proyectos/<Nombre>/`, con la fic
 | [[_Dashboard]] | Panel Dataview con métricas del grafo (via Obsidian) |
 | [[OpenBrainCode]] | **Esta nota** — hub que conecta todo |
 | [[_Outbox/README]] | Zona de salida: donde el conocimiento se exprime en outputs |
+| [[Worklog/OpenBrainCode/2026-08-19]] | Worklog del vault (historia append-only de sesiones) |
 | [[Worklog/OpenBrainCode/2026-08-13]] | Worklog del vault (historia append-only de sesiones) |
 | [[Reglas/Comunes/Changelog]] | Regla general: formato del changelog de todo proyecto |
 | [[Reglas/Comunes/Documentacion]] | Regla general: documentación obligatoria (CHANGELOG, README, AGENTS, semver) |

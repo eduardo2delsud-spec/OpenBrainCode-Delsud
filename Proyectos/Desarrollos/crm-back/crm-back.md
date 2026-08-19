@@ -1,7 +1,7 @@
 ﻿---
 type: proyecto
 project: crm-back
-path: C:\Users\edu\Desktop\DelSud\Desarrollos\crm-back
+path: C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\crm-back
 stack:
   - Node
   - Express
@@ -10,7 +10,7 @@ stack:
   - MySQL
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # crm-back
@@ -23,7 +23,7 @@ Backend REST del CRM: contacto/clientes, desarrollos y lotes, reservas (booking)
 
 ## Estado actual
 
-En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14).
+En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). Auditoría de hallazgos del 2026-08-18 (fixes MEDIO/BAJO + cabeceras de seguridad removidas por decisión de viku + `updateClient` con transacción) registrada en `docs/auditoria-hallazgos-2026-08-18.md`. El 2026-08-19 se removió la compatibilidad `numberId` (el front migró a `documentNumber`, alineado con el rename de `Contacts.numberId`).
 
 ## Stack
 
@@ -38,6 +38,7 @@ En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14).
 | Email | Nodemailer + SendGrid | SMTP |
 | Tareas | node-cron | vencimiento de reservas (cada hora) |
 | Excel/PDF/Img | ExcelJS · PDFKit · Sharp | exportaciones, fichas, imágenes |
+| Tests | Vitest + Supertest | `npm test` (build + vitest run) |
 
 ## Comandos útiles
 
@@ -74,8 +75,10 @@ top_folders:
 
 ## Documentación
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\crm-back\docs\README.md`): arquitectura, catálogo de endpoints, base de datos, diagramas ER, módulos, integraciones y entorno.
+- `docs/` — documentación centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\crm-back\docs\README.md`): arquitectura, catálogo de endpoints (`api-admin/client/user/web/adapter/booking-endpoints.md`), base de datos, diagramas ER, módulos, integraciones y entorno.
 - `docs/diagrams.md` — diagramas entidad-relación (Mermaid): DB CRM (25 tablas + pivotes), DB Gestión y puente de sincronización (2026-08-18).
+- `docs/auditoria-hallazgos-2026-08-18.md` — hallazgos de la auditoría del 2026-08-18 y sus fixes (MEDIO/BAJO).
+- `docs/adr/ADR-007-normalizacion-del-esquema-de-reservas.md` — ADR de normalización del esquema de reservas (ver [[Proyectos/Desarrollos/crm-back/Decisiones/ADR-007-normalizacion-del-esquema-de-reservas|ADR-007 en el vault]]).
 - `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
@@ -88,7 +91,7 @@ top_folders:
 
 ## Decisiones clave
 
-- (por completar)
+- [[Proyectos/Desarrollos/crm-back/Decisiones/ADR-007-normalizacion-del-esquema-de-reservas]] — normalización del esquema de reservas (en `docs/adr/` del repo; 2026-08-18).
 
 ## Lecciones
 
@@ -96,10 +99,11 @@ top_folders:
 
 ## Dónde buscar más
 
-- `docs/` del servicio (arquitectura, api-endpoints, base-de-datos, modulos, integraciones, entorno).
+- `docs/` del servicio (arquitectura, api-endpoints, base-de-datos, modulos, integraciones, entorno, adr).
 - Frontend que consume: `crm-front`.
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-18]] — diagramas entidad-relación (Mermaid) + enlaces en docs.
+- [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-19]] — remoción de compatibilidad `numberId` (rename a `documentNumber`) + actualización de docs de endpoints.
+- [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-18]] — diagramas entidad-relación (Mermaid) + enlaces en docs + auditoría de hallazgos (fixes + ADR-007).
 - [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-14]] — documentación centralizada + README actualizado.

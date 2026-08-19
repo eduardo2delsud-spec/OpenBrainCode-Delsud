@@ -1,7 +1,7 @@
 ﻿---
 type: proyecto
 project: gestion-desarrollos
-path: C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos
+path: C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos
 stack:
   - React
   - Vite
@@ -10,7 +10,7 @@ stack:
   - Zustand
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # gestion-desarrollos
@@ -70,7 +70,7 @@ top_folders:
 
 ## Documentación
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos\docs\README.md`): arquitectura, routing, módulos, data layer, API/integración, deployment.
+- `docs/` — documentación centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos\docs\README.md`): arquitectura, routing, módulos, data layer, API/integración, deployment.
 - `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa

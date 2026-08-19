@@ -1,7 +1,7 @@
 ﻿---
 type: proyecto
 project: gestion-desarrollos-back
-path: C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back
+path: C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos-back
 stack:
   - Express
   - Drizzle
@@ -10,7 +10,7 @@ stack:
   - JWT
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-18
+updated: 2026-08-19
 ---
 
 # gestion-desarrollos-back
@@ -75,7 +75,7 @@ top_folders:
 
 ## Documentación
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\edu\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, diagramas ER, integraciones, entorno.
+- `docs/` — documentación centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, diagramas ER, integraciones, entorno.
 - `README.md` / `CHANGELOG.md` — del repo.
 
 ## Conceptos que usa
