@@ -1,0 +1,5 @@
+* text=auto
+
+# Estado runtime de los plugins (escritos con LF por Node) — nunca convertir a CRLF
+_Config/.opencode/data/*.json text eol=lf
+_Config/_Config/.opencode/data/*.json text eol=lf
