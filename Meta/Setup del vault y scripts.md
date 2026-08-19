@@ -1,7 +1,7 @@
 ﻿---
 type: meta
 project: OpenBrainCode
-updated: 2026-08-12
+updated: 2026-08-19
 tags: [setup, scripts, estructura]
 ---
 
@@ -16,6 +16,7 @@ tags: [setup, scripts, estructura]
 | Usuario / máquina | VAULT_PATH (opencode global) | OPENBRAIN_PROJECTS_ROOT | Notas |
 |-------------------|------------------------------|-------------------------|-------|
 | `edu` (PC principal, Windows) | `C:\Users\edu\.config\opencode\opencode.jsonc` | `C:\Users\edu\Desktop\DelSud` (User) | Set up 2026-08-12. MCP `openbraincode-kg` en `C:\Users\edu\Desktop\DelSud\knowledge-graph` (kg.db en `~\AppData...\local\share\knowledge-graph\kg.db`). `OPENBRAIN_PROJECTS_EXTRA=C:\Users\edu\Desktop\APIA` está set pero apunta a una carpeta inexistente (los proyectos APIA reales viven en `DelSud\APIA`, cubiertos por la raíz principal). |
+| `eduar` (esta PC, Windows) | `C:\Users\eduar\.config\opencode\opencode.jsonc` | `C:\Users\eduar\OneDrive\Desktop\DelSud` (User) | Set up 2026-08-19. Config global apunta al vault (`_Config/AGENTS.md`, skills, plugins `vault-sync`/`automas`/`brain-guard`, agentes `pm`/`brain`/`backend`/`frontend`, comandos `indexar-sqlite`/`ordenar-brain`, MCP `openbraincode-kg` con rutas absolutas). MCP knowledge-graph clonado en `C:\Users\eduar\OneDrive\Desktop\DelSud\knowledge-graph`; reaplicado fix `_zod` (`z.object({}).catchall(z.unknown())`); índice 94 nodos / 251 aristas. Indexado inicial: 6 proyectos (1 nuevo: `desarrollos-web-v2`). ExecutionPolicy CurrentUser = `RemoteSigned` (2026-08-19): los `.ps1` del vault y `npm`/`npx` corren directo, sin `-ExecutionPolicy Bypass` (la machine default era `Restricted`). |
 
 ## Setup 2026-08-12 (registrado)
 
