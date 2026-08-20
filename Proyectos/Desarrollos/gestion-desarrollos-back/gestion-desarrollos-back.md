@@ -10,7 +10,7 @@ stack:
   - JWT
 arch: simple
 dominio: inmobiliario-gestion
-updated: 2026-08-19
+updated: 2026-08-20
 ---
 
 # gestion-desarrollos-back
@@ -88,11 +88,11 @@ top_folders:
 
 ## Decisiones clave
 
-- (por completar)
+- **Atomicidad dual-DB con saga CRM-first** (2026-08-20, cierre de los hallazgos 4.1–4.4): toda operación que escribe en DB local + CRM corre como saga — fase CRM (`crmDb.transaction`) con snapshot previo → fase local (`db.transaction` propia) → compensación exhaustiva desde el snapshot si la local falla; `FOR UPDATE` + re-check para disponibilidad de lotes. Detalle en [[Lecciones/atomicidad-dual-db-saga-crm-first]] y el worklog 2026-08-20.
 
 ## Lecciones
 
-- (por completar)
+- [[Lecciones/atomicidad-dual-db-saga-crm-first]] — patrón saga CRM-first para atomicidad entre dos MySQL independientes.
 
 ## Dónde buscar más
 
@@ -101,5 +101,6 @@ top_folders:
 
 ## Historial (worklog)
 
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-20]] — atomicidad dual-DB: saga CRM-first en cancelaciones/devoluciones/completaciones de reservas, `editReservation`, `createNewReservation`, `externalSold`, `certifyCancel`, `addDocumentToBooking`, `addAttachment`; nuevo `src/core/sagas.ts`; helpers tx-aware.
 - [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] — estandarización de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md` + diagramas entidad-relación en `docs/diagrams.md` (ER DB local, ER CRM, puente local↔CRM).
 - [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] — documentación centralizada + README.
