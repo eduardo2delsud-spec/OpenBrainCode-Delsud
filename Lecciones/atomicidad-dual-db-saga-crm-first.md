@@ -39,5 +39,4 @@ Detalles que lo hacen viable:
 ## Relacionado
 
 - [[Brain/Errores/return-await-tx-impide-fase-local-saga]] — gotcha de implementación.
-- [[Conceptos/saga]] · [[Conceptos/transaccion-distribuida]] — si se formalizan como conceptos.
 - [[Patrones/Convencion variables de entorno]] — contexto del mismo servicio.
