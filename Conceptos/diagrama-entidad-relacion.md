@@ -33,21 +33,34 @@ El DER completo de VIZTA vive en `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\D
 
 | Aspecto | Valor |
 |---------|-------|
-| Total de tablas | 39 |
+| Total de tablas | 38 |
 | Schemas lógicos | 5 (auth, crm, operations, financials, admin) |
 | Tablas nuevas (PBL) | 12 |
-| Tablas eliminadas | 9 (por consolidación) |
+| Tablas eliminadas | 10 (por consolidación + origin_data) |
 | Cobertura PBL | 60/60 historias de usuario |
+| Preguntas resueltas | 7/7 (24/08/2026) |
 
 ### Schemas
 
 ```
 auth          → 2 tablas  (users, roles)
-crm           → 17 tablas (contacts, lots, developments, quotations, agenda, etc.)
+crm           → 16 tablas (contacts, lots, developments, quotations, agenda, etc.)
 operations    → 11 tablas (bookings, contracts, installments, payments, etc.)
 financials    → 3 tablas  (commissions, wallets, wallet_transactions)
 admin         → 6 tablas  (ipc_indices, lot_records, notifications, templates, etc.)
 ```
+
+### Decisiones clave del modelado
+
+| Decisión | Fundamento |
+|----------|------------|
+| `lots.contact_id` + `contact_publications` coexisten | FK = reserva activa; M:N = historial de interés |
+| `origin_data` eliminada | Reemplazada por `contacts.origin` + `contact_publications` |
+| `zones` opcional | Útil para CRM, no obligatorio al crear contacto |
+| `lot_records` separado de `booking_history` | Dominios diferentes: lote vs reserva |
+| `booking_second_buyers` nullable | Opcional en la práctica, PBL no lo menciona |
+| Campos vehículo eliminados | PBL no menciona permutas |
+| `claims` simplificada | Sin serial_number, UUID como PK |
 
 ### Entidades clave del dominio
 
@@ -66,12 +79,13 @@ admin         → 6 tablas  (ipc_indices, lot_records, notifications, templates,
 ## Relaciones principales
 
 ```
-CONTACTS ──M:N── LOTS (lotes de interés)
+CONTACTS ──M:N── LOTS (lotes de interés, via contact_publications)
 CONTACTS ──M:N── USERS (contactos compartidos entre asesores)
 CONTACTS ──1:N── QUOTATIONS ──1:N── QUOTATION_INSTALLMENTS
-BOOKINGS ──M:N── LOTS
+BOOKINGS ──M:N── LOTS (via booking_lots)
 BOOKINGS ──1:1── CONTRACTS ──1:N── INSTALLMENTS
 BOOKINGS ──1:N── COMMISSIONS ──M:1── WALLETS
+LOTS ──M:1── CONTACTS (contact_id: lote reservado actualmente)
 ```
 
 ## Referencias
