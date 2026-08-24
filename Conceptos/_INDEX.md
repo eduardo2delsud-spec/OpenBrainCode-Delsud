@@ -21,7 +21,9 @@ SORT file.name ASC
 ## Registro
 
 - [[Conceptos/ajuste-por-ipc]] — Ajuste por IPC  (category: financiacion · updated: 2026-08-18)
+- [[Conceptos/base-de-datos-unificada]] — Base de datos unificada  (category: arquitectura · updated: 2026-08-24)
 - [[Conceptos/boleto-financiado]] — Boleto financiado  (category: legal · updated: 2026-08-18)
+- [[Conceptos/diagrama-entidad-relacion]] — Diagrama Entidad-Relación (DER)  (category: modelado · updated: 2026-08-24)
 - [[Conceptos/diferenciacion-de-fondos]] — DiferenciaciÃ³n de fondos  (category: contable · updated: 2026-08-18)
 - [[Conceptos/full-scan]] — Full-scan  (category: rendimiento · updated: 2026-08-13)
 - [[Conceptos/garante-y-cogarante]] — Garante y cogarante  (category: financiacion · updated: 2026-08-18)

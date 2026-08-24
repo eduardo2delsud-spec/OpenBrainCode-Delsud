@@ -51,7 +51,7 @@ SORT project ASC
 
 ### VIZTA
 
-- [[Proyectos/VIZTA/VIZTA]] — plataforma comercial de terrenos y lotes (PBL + flujos + ADRs; en definición)
+- [[Proyectos/VIZTA/VIZTA]] — plataforma comercial de terrenos y lotes (PBL + DER + flujos + ADRs; PostgreSQL única, en definición)
 
 ## Relacionado
 
