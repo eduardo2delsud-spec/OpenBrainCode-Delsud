@@ -17,12 +17,12 @@ tags: [proyecto, inmobiliario, crm, pbl, fintech, postgresql]
 ## Estado actual
 
 - **Producto en definición.** Fuente canónica: `ViztaDocs/PBL VIZTA - v0.3 04_08_2026.md` (revisado el 18/08/2026, v0.3.1).
-- **Schema canónico:** `ViztaDocs/Schema/vizta-dbdiagram.dbml` — **45 tablas PostgreSQL** (25/08/2026), 5 schemas lógicos. Documentado además en `ViztaDocs/DER VIZTA - Documento Completo.md` + DER simplificado en PNG.
+- **Schema canónico:** `ViztaDocs/Schema/vizta-dbdiagram.dbml` — **48 tablas PostgreSQL** (26/08/2026), 5 schemas lógicos. Documentado además en `ViztaDocs/DER VIZTA - Documento Completo.md` + DER simplificado en PNG.
 - **Decisión de DB:** una sola PostgreSQL reemplaza ambas MySQL ([[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR-0010]], aceptada). Schema nuevo desde cero.
 - **Flujo del Asesor documentado** (26/08): `ViztaDocs/Flujos/Flujo Asesor.md` v1.1 — 7 etapas mapeadas a las tablas del DBML, con diagramas ER por etapa y secuencia de reserva con pago verificado.
 - Prioridad actual: **Fase 1** — corrección y definición de los diseños del CRM del Asesor; próximos flujos: Administración y Cobranzas (misma estructura).
 - Se reutilizará el motor de [[Proyectos/Desarrollos/gestion-desarrollos/gestion-desarrollos]] como base de Administración y Cobranzas; el CRM del asesor se construye nuevo.
-- **Pendientes críticos de negocio** (registrados en [[Proyectos/VIZTA/Worklog/2026-08-18|worklog 18/08]]): criterio de rotación de consultas, proceso de selección de asesores, % de comisión del asesor y fuentes de fondo, firmantes/re-publicación/pago perdedor/DNI.
+- **Pendientes críticos de negocio** (registrados en [[Proyectos/VIZTA/Worklog/2026-08-18|worklog 18/08]]): criterio de rotación de consultas, proceso de selección de asesores, firmantes/re-publicación/pago perdedor/DNI. ~~% de comisión del asesor y fuentes de fondo~~ (resuelto: ADR-0016, `commission_rules`).
 
 > Nota: tras la reorganización del workspace a `ViztaDocs/`, los antiguos "8 flujos operativos" y los ADRs 0001-0009 **ya no están en disco** — solo sobrevive este flujo del asesor y la copia de ADR-0010 en el vault. Ver [[Proyectos/VIZTA/Worklog/2026-08-26|worklog 26/08]].
 
@@ -36,7 +36,7 @@ VIZTA organiza la actividad comercial de venta y financiación de terrenos/lotes
 |------|-----------|---------|
 | Frontend (planificado) | React + Vite + JavaScript | SPA CRM del asesor + Admin + Cobranzas; TanStack Query + Zustand + MUI |
 | Backend (planificado) | Express 5 + TypeScript strict | Drizzle ORM + Joi + Biome; JWT |
-| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 47 tablas, 5 schemas |
+| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 48 tablas, 5 schemas |
 | ORM | Drizzle ORM | dialect `pg`, driver `pg` (node-postgres) |
 | Pagos | Mercado Pago / pasarela | Reserva se confirma solo con pago verificado; sin validación manual de Admin |
 
@@ -47,7 +47,7 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ├── ViztaDocs/                  ← documentación del producto
 │   ├── PBL VIZTA - v0.3 04_08_2026.md   ← product backlog (fuente de la verdad)
 │   ├── DER VIZTA - Documento Completo.md ← diagrama entidad-relación
-│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (47 tablas, 26/08)
+│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (48 tablas, 26/08)
 │   ├── Flujos/Flujo Asesor.md            ← flujo del asesor v1.1 (26/08)
 │   ├── Flujos/Flujo Administración.md    ← flujo de administración v1.0 (26/08)
 │   ├── Flujos/Flujo Cobranzas.md         ← flujo de cobranzas v1.0 (26/08)
