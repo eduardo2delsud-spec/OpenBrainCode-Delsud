@@ -2,7 +2,7 @@
 type: concepto
 category: pagos
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, pagos, pasarela, reserva]
 ---
 
@@ -21,6 +21,15 @@ Modelo de confirmación de pagos donde la fuente de verdad es la pasarela (Merca
 - Pagos simultáneos sobre el mismo lote: vale la **primera confirmación recibida**; destino del pago perdedor pendiente (ADR 0009).
 - La comisión del asesor se registra al **boleto firmado y certificado**, no al reservar (ADR 0001).
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — flujo de reserva (PBL §Reserva, `Flujos/01 Reserva y boleto.md`)
+- [[Proyectos/VIZTA/VIZTA]] — PBL §Reserva y §Flujo de reserva; `ViztaDocs/Flujos/Flujo Asesor.md` etapa 5 (diagrama de secuencia del checkout)
+
+## Patrones relacionados
+
+- [[Conceptos/diferenciacion-de-fondos]] — el dinero verificado se clasifica por dueño (propietario / VIZTA / asesor)
+- [[Conceptos/garante-y-cogarante]] — otra validación externa que condiciona el avance
+
+## Lecciones
+
+- (sin lecciones todavía)

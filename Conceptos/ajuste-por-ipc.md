@@ -2,7 +2,7 @@
 type: concepto
 category: financiacion
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, financiacion, ipc, inflacion]
 ---
 
@@ -20,6 +20,14 @@ Todas las financiaciones otorgadas en pesos se ajustan por IPC: el valor de la c
 - **Pendientes**: periodicidad definitiva, fuente del índice, fórmula de cálculo y forma de informar la cuota actualizada al cliente (PBL §Financiaciones en pesos).
 - Las financiaciones en dólares no se ajustan por IPC: usan condiciones comerciales a definir (ejemplo no definitivo: 24 cuotas sin interés, tasa para plazos mayores).
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — cotización y cobranzas (`Flujos/03 Cotizacion y financiacion.md`, `Flujos/05 Cobranzas.md`)
+- [[Proyectos/VIZTA/VIZTA]] — cotización y cobranzas (PBL §Cotización y financiación; `ViztaDocs/Flujos/Flujo Asesor.md` etapa 4)
+
+## Patrones relacionados
+
+- (sin patrones vinculados todavía)
+
+## Lecciones
+
+- (sin lecciones todavía)

@@ -2,7 +2,7 @@
 type: concepto
 category: contable
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, contable, fondos, comisiones]
 ---
 
@@ -22,6 +22,14 @@ Todo ingreso del sistema se clasifica según a quién pertenece. VIZTA cobra por
 - **Pendiente** (ADR 0007): % de comisión del asesor y el mecanismo (pasarela en el checkout vs pago directo entre asesor y comprador). Si el dinero pasa directo entre asesor y comprador, el sistema no puede interceptar el método de pago: por eso la comisión se integra al checkout de la reserva.
 - **Pendiente** (ADR 0009): destino del pago perdedor cuando dos reservas se pagan simultáneamente sobre el mismo lote.
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — `Flujos/01 Reserva y boleto.md`, `Flujos/Por Rol/03 Administración.md`, `Flujos/Por Rol/04 Cobranzas.md`
+- [[Proyectos/VIZTA/VIZTA]] — PBL §Diferenciación de fondos y §Billetera y comisiones; `ViztaDocs/Flujos/Flujo Asesor.md` etapa 7
+
+## Patrones relacionados
+
+- [[Conceptos/boleto-financiado]] — el hito del boleto define cuándo se registra la comisión del asesor
+
+## Lecciones
+
+- (sin lecciones todavía)

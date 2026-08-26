@@ -1,7 +1,7 @@
 ---
 type: concepto
 category: modelado
-updated: 2026-08-24
+updated: 2026-08-26
 tags: [der, base-de-datos, modelado, entidad-relacion]
 created: 2026-08-24
 ---
@@ -27,18 +27,20 @@ El DER es la representación gráfica y documental del modelo de datos de un sis
 
 ## DER de VIZTA
 
-El DER completo de VIZTA vive en `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\DER VIZTA — Documento Completo.md`.
+El DER completo de VIZTA vive en `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\DER VIZTA - Documento Completo.md`; el schema operativo canónico es el DBML `ViztaDocs/Schema/vizta-dbdiagram.dbml` (45 tablas, 25/08/2026).
 
 ### Resumen
 
 | Aspecto | Valor |
 |---------|-------|
-| Total de tablas | 38 |
+| Total de tablas (DBML vigente) | 45 (25/08/2026) |
 | Schemas lógicos | 5 (auth, crm, operations, financials, admin) |
 | Tablas nuevas (PBL) | 12 |
 | Tablas eliminadas | 10 (por consolidación + origin_data) |
 | Cobertura PBL | 60/60 historias de usuario |
 | Preguntas resueltas | 7/7 (24/08/2026) |
+
+> Nota: el DER documentado contaba 38 tablas al 24/08; el DBML del 25/08 incorpora tablas nuevas (p. ej. `sellers`, `contact_documents`, `certified_tickets`, `ticket_templates`) y es la fuente a seguir.
 
 ### Schemas
 
@@ -88,8 +90,21 @@ BOOKINGS ──1:N── COMMISSIONS ──M:1── WALLETS
 LOTS ──M:1── CONTACTS (contact_id: lote reservado actualmente)
 ```
 
+## Proyectos que lo usan
+
+- [[Proyectos/VIZTA/VIZTA]] — DER completo del modelo de datos; base de `ViztaDocs/Flujos/Flujo Asesor.md`
+
+## Patrones relacionados
+
+- [[Conceptos/base-de-datos-unificada]] — la consolidación en PostgreSQL única es la premisa del DER
+
+## Lecciones
+
+- (sin lecciones todavía)
+
 ## Referencias
 
 - [[Proyectos/VIZTA/VIZTA]] — ficha del proyecto
 - [[Conceptos/base-de-datos-unificada]] — por qué una sola PostgreSQL
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\DER VIZTA — Documento Completo.md` — documento completo
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\DER VIZTA - Documento Completo.md` — documento completo
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Schema\vizta-dbdiagram.dbml` — schema canónico (DBML, 45 tablas)

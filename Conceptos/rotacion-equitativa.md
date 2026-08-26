@@ -2,7 +2,7 @@
 type: concepto
 category: asignacion
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, asignacion, crm, asesores]
 ---
 
@@ -21,6 +21,14 @@ Estrategia de asignación inicial de consultas (leads) donde cada consulta nueva
 - Tensión: las desarrolladoras tienen **asesor asignado** (sus consultas no rotarían) y el PBL eliminó la segmentación geográfica en varias vistas.
 - El **alta manual** de un contacto no entra a rotación: el asesor que carga el contacto es su dueño.
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — CRM del asesor (`Flujos/02 Contactos y consultas.md`)
+- [[Proyectos/VIZTA/VIZTA]] — CRM del asesor (PBL §CRM del Asesor); `ViztaDocs/Flujos/Flujo Asesor.md` etapa 2 (`user_contacts`)
+
+## Patrones relacionados
+
+- (sin patrones vinculados todavía)
+
+## Lecciones
+
+- (sin lecciones todavía)

@@ -2,7 +2,7 @@
 type: concepto
 category: financiacion
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, financiacion, garantias]
 ---
 
@@ -21,6 +21,14 @@ En financiaciones con requisitos (monto, condiciones comerciales), se solicita u
 - Mecanismos de validación posibles (pendiente elegir): SMS, WhatsApp, llamada, enlace de confirmación, validación por datos del DNI.
 - Distinto de "Firmante 2" de la reserva (concepto pendiente, ADR 0009): el garante es respaldo crediticio, no firmante del contrato.
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — `Flujos/07 Garante y cogarante.md`
+- [[Proyectos/VIZTA/VIZTA]] — PBL §Garantes o cogarantes; `ViztaDocs/Flujos/Flujo Asesor.md` etapa 5 (tabla `guarantors`)
+
+## Patrones relacionados
+
+- [[Conceptos/pago-verificado-por-pasarela]] — ambos condicionan el avance de la operación a una validación externa
+
+## Lecciones
+
+- (sin lecciones todavía)

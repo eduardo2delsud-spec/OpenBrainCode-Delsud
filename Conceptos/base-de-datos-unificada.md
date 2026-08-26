@@ -1,7 +1,7 @@
 ---
 type: concepto
 category: arquitectura
-updated: 2026-08-24
+updated: 2026-08-26
 tags: [base-de-datos, postgresql, consolidacion, arquitectura]
 created: 2026-08-24
 ---
@@ -9,6 +9,10 @@ created: 2026-08-24
 # Base de datos unificada
 
 > Decisión de consolidar múltiples bases de datos en una única PostgreSQL para el proyecto [[Proyectos/VIZTA/VIZTA]].
+
+## Qué es
+
+Una sola base PostgreSQL que reemplaza las dos MySQL del ecosistema Desarrollos (`crmdesarrollos` + `gestiondesarrollos`). Ambos backends (`crm-back` y `gestion-back`) conectan a la misma DB con esquema compartido, eliminando el cross-DB sync, el saga pattern y los usuarios duplicados.
 
 ## Contexto
 
@@ -62,10 +66,24 @@ vizta
 └── admin         → ipc_indices, lot_records, notifications, templates
 ```
 
-Total: **39 tablas** (vs 46 actuales entre ambas MySQL).
+Total: **45 tablas** según el DBML vigente (`ViztaDocs/Schema/vizta-dbdiagram.dbml`, 25/08/2026).
+
+## Proyectos que lo usan
+
+- [[Proyectos/VIZTA/VIZTA]] — decisión ADR-0010; ambos backends apuntan a la misma PostgreSQL
+- [[Proyectos/Desarrollos/crm-back/crm-back]] y [[Proyectos/Desarrollos/gestion-desarrollos-back/gestion-desarrollos-back]] — migran de MySQL dual a esta DB única
+
+## Patrones relacionados
+
+- (sin patrones vinculados todavía)
+
+## Lecciones
+
+- (sin lecciones todavía)
 
 ## Referencias
 
 - [[Proyectos/VIZTA/VIZTA]] — ficha del proyecto
 - [[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica]] — ADR
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\DER VIZTA — Documento Completo.md` — DER completo
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\DER VIZTA - Documento Completo.md` — DER completo
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Schema\vizta-dbdiagram.dbml` — schema canónico (DBML)

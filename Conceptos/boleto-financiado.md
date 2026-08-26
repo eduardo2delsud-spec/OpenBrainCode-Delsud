@@ -2,7 +2,7 @@
 type: concepto
 category: legal
 created: 2026-08-18
-updated: 2026-08-18
+updated: 2026-08-26
 tags: [concepto, legal, boleto, reserva]
 ---
 
@@ -21,6 +21,14 @@ Modalidad de financiación donde el comprador firma el boleto (con intervención
 - La comisión del asesor se registra **al boleto firmado y certificado** (ADR 0001).
 - La firma habilita el contrato y la entrega al cliente del "boleto financiado" como documento.
 
-## Usos
+## Proyectos que lo usan
 
-- [[Proyectos/VIZTA/VIZTA]] — `Flujos/01 Reserva y boleto.md`, `Flujos/04 Boleto y certificado.md`
+- [[Proyectos/VIZTA/VIZTA]] — PBL §Boleto financiado y §Cierre administrativo; `ViztaDocs/Flujos/Flujo Asesor.md` etapa 7 (comisión al boleto)
+
+## Patrones relacionados
+
+- [[Conceptos/pago-verificado-por-pasarela]] — el boleto solo se firma sobre reserva con pago verificado
+
+## Lecciones
+
+- (sin lecciones todavía)
