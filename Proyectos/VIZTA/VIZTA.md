@@ -36,7 +36,7 @@ VIZTA organiza la actividad comercial de venta y financiación de terrenos/lotes
 |------|-----------|---------|
 | Frontend (planificado) | React + Vite + JavaScript | SPA CRM del asesor + Admin + Cobranzas; TanStack Query + Zustand + MUI |
 | Backend (planificado) | Express 5 + TypeScript strict | Drizzle ORM + Joi + Biome; JWT |
-| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 38 tablas, 5 schemas |
+| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 46 tablas, 5 schemas |
 | ORM | Drizzle ORM | dialect `pg`, driver `pg` (node-postgres) |
 | Pagos | Mercado Pago / pasarela | Reserva se confirma solo con pago verificado; sin validación manual de Admin |
 
@@ -47,8 +47,12 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ├── ViztaDocs/                  ← documentación del producto
 │   ├── PBL VIZTA - v0.3 04_08_2026.md   ← product backlog (fuente de la verdad)
 │   ├── DER VIZTA - Documento Completo.md ← diagrama entidad-relación
-│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (45 tablas, 25/08)
+│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (46 tablas, 26/08)
 │   ├── Flujos/Flujo Asesor.md            ← flujo del asesor v1.1 (26/08)
+│   ├── Flujos/Flujo Administración.md    ← flujo de administración v1.0 (26/08)
+│   ├── Flujos/Flujo Cobranzas.md         ← flujo de cobranzas v1.0 (26/08)
+│   ├── Flujos/Flujo Superadmin.md        ← flujo de superadmin v1.0 (26/08)
+│   ├── Flujos/Flujo Portal.md            ← flujo del portal público v1.0 (26/08)
 │   └── Plan Rol Asesos VIZTA.md          ← arquitectura + fases del rol asesor
 ├── crm-back/       ← JS/Sequelize/MySQL → se migra a TS/Drizzle/PostgreSQL
 ├── crm-front/      ← JS/React/MUI v5 (SPA del asesor)
@@ -60,7 +64,7 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ## Conceptos que usa
 
 - [[Conceptos/base-de-datos-unificada]] — consolidación de ambas MySQL en una sola PostgreSQL (ADR-0010)
-- [[Conceptos/diagrama-entidad-relacion]] — DER completo del modelo de datos (38 tablas, 7 preguntas resueltas)
+- [[Conceptos/diagrama-entidad-relacion]] — DER completo del modelo de datos (46 tablas, 7 preguntas resueltas)
 - [[Conceptos/pago-verificado-por-pasarela]] — la reserva se confirma solo con pago verificado; Admin no valida comprobantes (ADR 0001)
 - [[Conceptos/rotacion-equitativa]] — distribución de consultas entre asesores; criterio pendiente (ADR 0004)
 - [[Conceptos/ajuste-por-ipc]] — financiaciones en pesos ajustadas por IPC (periodicidad y fuente pendientes)
@@ -75,7 +79,10 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ## Decisiones clave
 
 - [[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR-0010]] — Consolidación a PostgreSQL única (aceptada)
-- Pendientes de definición (registrados en worklogs, sin ADR vigente en disco): criterio de rotación de consultas, selección de asesores, % de comisión y fuentes de fondo, firmantes / re-publicación / pago perdedor / DNI
+- [[Decisiones/ADR-0011 IDs incrementales para lookup tables|ADR-0011]] — IDs incrementales para roles y document_types (aceptada)
+- [[Decisiones/ADR-0012 Tabla states para pipeline de ventas|ADR-0012]] — Tabla states para pipeline de ventas (aceptada)
+- [[Decisiones/ADR-0013 Eliminación de permuta|ADR-0013]] — Eliminación de permuta (aceptada)
+- [[Decisiones/ADR-0014 Tabla publications y merge developers-sellers|ADR-0014]] — Tabla publications y merge developers→sellers (aceptada)
 
 ## Lecciones
 
@@ -83,7 +90,7 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 
 ## Historial (worklog)
 
-- [[Proyectos/VIZTA/Worklog/2026-08-26]] — Flujo Asesor v1.1 (workspace), reorg a `ViztaDocs/`, curaduría del vault
+- [[Proyectos/VIZTA/Worklog/2026-08-26]] — Estados de contacto (oportunidades), flujos de Admin/Cobranzas/Superadmin/Portal, DBML actualizado
 - [[Proyectos/VIZTA/Worklog/2026-08-24]] — relevo de repos, diseño del DER completo, decisión PostgreSQL única
 - [[Proyectos/VIZTA/Worklog/2026-08-18]] — alta del proyecto en el vault; revisión de consistencia de PBL/flujos y creación de ADRs
 
