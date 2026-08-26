@@ -3,7 +3,7 @@ type: proyecto
 project: VIZTA
 status: activo
 created: 2026-08-18
-updated: 2026-08-24
+updated: 2026-08-26
 stack: [React, Vite, TypeScript, TanStack Query, Zustand, MUI, Express, Drizzle, Joi, Biome, PostgreSQL, Mercado Pago]
 arch: spa-api
 dominio: inmobiliario
@@ -16,13 +16,15 @@ tags: [proyecto, inmobiliario, crm, pbl, fintech, postgresql]
 
 ## Estado actual
 
-- **Producto en definición.** Fuente canónica: `PBL VIZTA - v0.3 04_08_2026.md` (revisado el 18/08/2026, v0.3.1).
-- **DER completo** diseñado: 38 tablas PostgreSQL en 5 schemas lógicos, cobertura total del PBL (60/60 historias de usuario). 7 preguntas pendientes resueltas (24/08). Documento: `DER VIZTA — Documento Completo.md` en la raíz del workspace.
-- **Decisión de DB:** una sola PostgreSQL reemplaza ambas MySQL (ADR-0010). Schema nuevo desde cero.
-- **Flujos diagramados** en `Flujos/` (8 flujos operativos + flujos por rol: Asesor, Administración, Cobranzas) y **10 ADRs** en `ADRs/` + `Decisiones/`.
-- Prioridad actual: **Fase 1** — corrección y definición de los diseños del CRM del Asesor (Fases 1-5 del PBL).
+- **Producto en definición.** Fuente canónica: `ViztaDocs/PBL VIZTA - v0.3 04_08_2026.md` (revisado el 18/08/2026, v0.3.1).
+- **Schema canónico:** `ViztaDocs/Schema/vizta-dbdiagram.dbml` — **45 tablas PostgreSQL** (25/08/2026), 5 schemas lógicos. Documentado además en `ViztaDocs/DER VIZTA - Documento Completo.md` + DER simplificado en PNG.
+- **Decisión de DB:** una sola PostgreSQL reemplaza ambas MySQL ([[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR-0010]], aceptada). Schema nuevo desde cero.
+- **Flujo del Asesor documentado** (26/08): `ViztaDocs/Flujos/Flujo Asesor.md` v1.1 — 7 etapas mapeadas a las tablas del DBML, con diagramas ER por etapa y secuencia de reserva con pago verificado.
+- Prioridad actual: **Fase 1** — corrección y definición de los diseños del CRM del Asesor; próximos flujos: Administración y Cobranzas (misma estructura).
 - Se reutilizará el motor de [[Proyectos/Desarrollos/gestion-desarrollos/gestion-desarrollos]] como base de Administración y Cobranzas; el CRM del asesor se construye nuevo.
-- **Pendientes críticos de negocio** (ADR 0004/0005/0007/0009): criterio de rotación de consultas + zonas, proceso de selección de asesores, % de comisión del asesor y fuentes de fondo, y pendientes operativos (firmantes, re-publicación, pago perdedor, DNI).
+- **Pendientes críticos de negocio** (registrados en [[Proyectos/VIZTA/Worklog/2026-08-18|worklog 18/08]]): criterio de rotación de consultas, proceso de selección de asesores, % de comisión del asesor y fuentes de fondo, firmantes/re-publicación/pago perdedor/DNI.
+
+> Nota: tras la reorganización del workspace a `ViztaDocs/`, los antiguos "8 flujos operativos" y los ADRs 0001-0009 **ya no están en disco** — solo sobrevive este flujo del asesor y la copia de ADR-0010 en el vault. Ver [[Proyectos/VIZTA/Worklog/2026-08-26|worklog 26/08]].
 
 ## Qué hace
 
@@ -41,21 +43,18 @@ VIZTA organiza la actividad comercial de venta y financiación de terrenos/lotes
 ## Arquitectura
 
 ```
-Vizta/                      ← workspace del proyecto (C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta)
-├── PBL VIZTA - v0.3 04_08_2026.md   ← product backlog (fuente de la verdad)
-├── DER VIZTA — Documento Completo.md ← diagrama entidad-relación (38 tablas PostgreSQL)
-├── Flujos/                ← 8 flujos operativos + flujos por rol (md + canvas)
-├── ADRs/                  ← 10 ADRs (decisiones y pendientes)
-└── Comparacion VIZTA vs Desarrollos.md ← base de reutilización sobre Desarrollos
-```
-
-### Repos existentes (reutilizados)
-
-```
-crm-back/       ← JS/Sequelize/MySQL → se migra a TS/Drizzle/PostgreSQL
-crm-front/      ← JS/React/MUI v5 (SPA del asesor)
-gestion-back/   ← TS/Drizzle/MySQL → se adapta a PostgreSQL
-gestion-front/  ← JS/React/MUI v7 (SPA de admin/cobranzas)
+Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta)
+├── ViztaDocs/                  ← documentación del producto
+│   ├── PBL VIZTA - v0.3 04_08_2026.md   ← product backlog (fuente de la verdad)
+│   ├── DER VIZTA - Documento Completo.md ← diagrama entidad-relación
+│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (45 tablas, 25/08)
+│   ├── Flujos/Flujo Asesor.md            ← flujo del asesor v1.1 (26/08)
+│   └── Plan Rol Asesos VIZTA.md          ← arquitectura + fases del rol asesor
+├── crm-back/       ← JS/Sequelize/MySQL → se migra a TS/Drizzle/PostgreSQL
+├── crm-front/      ← JS/React/MUI v5 (SPA del asesor)
+├── gestion-back/   ← TS/Drizzle/MySQL → se adapta a PostgreSQL
+├── gestion-front/  ← JS/React/MUI v7 (SPA de admin/cobranzas)
+└── oldDocs/        ← DERs legacy de crm-back y gestion-back (MySQL)
 ```
 
 ## Conceptos que usa
@@ -75,11 +74,8 @@ gestion-front/  ← JS/React/MUI v7 (SPA de admin/cobranzas)
 
 ## Decisiones clave
 
-- ADR 0001 — Pago verificado y comisión al boleto (aceptado)
-- ADR 0003 — Generación de reserva pre/post pago (aceptado)
-- ADR 0008 — Notificaciones de firma en alcance (aceptado)
-- [[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR 0010]] — Consolidación a PostgreSQL única (aceptado)
-- ADR 0004/0005/0007/0009 — pendientes de definición (ver `ADRs/README.md` del workspace)
+- [[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR-0010]] — Consolidación a PostgreSQL única (aceptada)
+- Pendientes de definición (registrados en worklogs, sin ADR vigente en disco): criterio de rotación de consultas, selección de asesores, % de comisión y fuentes de fondo, firmantes / re-publicación / pago perdedor / DNI
 
 ## Lecciones
 
@@ -87,15 +83,16 @@ gestion-front/  ← JS/React/MUI v7 (SPA de admin/cobranzas)
 
 ## Historial (worklog)
 
-- `Proyectos/VIZTA/Worklog/2026-08-24.md` — relevo de repos, diseño del DER completo, decisión PostgreSQL única
-- `Proyectos/VIZTA/Worklog/2026-08-18.md` — alta del proyecto en el vault; revisión de consistencia de PBL/flujos y creación de ADRs
+- [[Proyectos/VIZTA/Worklog/2026-08-26]] — Flujo Asesor v1.1 (workspace), reorg a `ViztaDocs/`, curaduría del vault
+- [[Proyectos/VIZTA/Worklog/2026-08-24]] — relevo de repos, diseño del DER completo, decisión PostgreSQL única
+- [[Proyectos/VIZTA/Worklog/2026-08-18]] — alta del proyecto en el vault; revisión de consistencia de PBL/flujos y creación de ADRs
 
 ## Dónde buscar más
 
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\PBL VIZTA - v0.3 04_08_2026.md` — PBL (fuente canónica)
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\DER VIZTA — Documento Completo.md` — DER completo (38 tablas PostgreSQL, preguntas resueltas)
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\Flujos\00 Indice.md` — índice de flujos
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ADRs\README.md` — índice de ADRs del workspace
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\Comparacion VIZTA vs Desarrollos.md` — comparación con Desarrollos
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\PBL VIZTA - v0.3 04_08_2026.md` — PBL (fuente canónica)
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Schema\vizta-dbdiagram.dbml` — schema canónico (45 tablas, DBML)
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\DER VIZTA - Documento Completo.md` — DER completo documentado
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Flujos\Flujo Asesor.md` — flujo del asesor v1.1
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Plan Rol Asesos VIZTA.md` — arquitectura y fases del rol asesor
 - [[Conceptos/base-de-datos-unificada]] — por qué PostgreSQL única
 - [[Conceptos/diagrama-entidad-relacion]] — resumen del DER

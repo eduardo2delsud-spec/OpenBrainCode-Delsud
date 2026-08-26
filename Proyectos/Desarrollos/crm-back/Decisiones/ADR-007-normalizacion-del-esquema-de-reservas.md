@@ -2,7 +2,7 @@
 type: decision
 status: aceptada
 accepted: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-26
 project: crm-back
 tags: [decision, adr, reservas, esquema, crm]
 ---
@@ -19,11 +19,34 @@ El esquema de reservas del CRM arrastra asimetrías (por ejemplo `Bookings.numbe
 
 Normalizar el esquema de reservas de `crm-back` según lo detallado en el ADR del repo (`docs/adr/ADR-007-...`), que define el plan de reestructuración de la tabla `Bookings` y sus firmantes.
 
+## Opciones consideradas
+
+La evaluación detallada vive en el ADR del repo (fuente canónica). Resumen:
+
+1. **Mantener campos duales** (`numberId`/`documentNumber`, `numberId2`) — descartada: asimetría y deuda técnica.
+2. **Normalizar a `documentNumber` + tabla de firmantes separada** (elegida) — consistente con el rename de `Contacts`.
+
 ## Consecuencias
 
 - El front migró el campo del documento del firmante 1 a `documentNumber` (2026-08-19); `numberId2` se resolverá junto con la reestructuración de esa tabla.
 - crm-back removió la compatibilidad dual `numberId`/`documentNumber` (2026-08-19).
 - Ver también: [[Proyectos/Desarrollos/crm-front/Worklog/2026-08-19]] y [[Proyectos/Desarrollos/crm-back/Worklog/2026-08-19]].
+
+## Proyectos que la aplican
+
+- [[Proyectos/Desarrollos/crm-back/crm-back]] — reestructuración de `Bookings`
+- [[Proyectos/Desarrollos/crm-front/crm-front]] — migración del campo en el frontend
+
+## Estado
+
+**Aceptada** — 2026-08-18.
+
+## Historial de status
+
+| Fecha | Status |
+|-------|--------|
+| 2026-08-18 | Propuesta |
+| 2026-08-18 | Aceptada |
 
 ## Relacionado
 

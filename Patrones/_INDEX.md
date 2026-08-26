@@ -1,18 +1,18 @@
-ï»¿---
+---
 type: index
 area: Patrones
 updated: 2026-08-18
 ---
 
-# Patrones â€” Ãndice
+# Patrones — Índice
 
-> Patrones de diseÃ±o e integraciÃ³n, tipados. Plantilla: [[Patrones/Template PatrÃ³n]].
+> Patrones de diseño e integración, tipados. Plantilla: [[Patrones/Template Patrón]].
 
 <!-- AUTO: cuerpo regenerado por construir-indices.ps1 (no editar) -->
-## CatÃ¡logo (Dataview)
+## Catálogo (Dataview)
 
 ```dataview
-TABLE category AS "CategorÃ­a", length(file.inlinks) AS "Referencias", updated
+TABLE category AS "Categoría", length(file.inlinks) AS "Referencias", updated
 FROM "Patrones"
 WHERE !startswith(file.name, "Template")
 SORT file.name ASC
@@ -20,13 +20,13 @@ SORT file.name ASC
 
 ## Registro
 
-- [[Patrones/bench-a-b-con-git-worktree]] â€” Bench A-B con git worktree  (category: rendimiento Â· updated: 2026-08-13)
-- [[Patrones/Convencion variables de entorno]] â€” ConvenciÃƒÂ³n variables de entorno  (category: arquitectura Â· updated: 2026-08-18)
+- [[Patrones/bench-a-b-con-git-worktree]] — Bench A-B con git worktree  (category: rendimiento · updated: 2026-08-13)
+- [[Patrones/convencion-variables-de-entorno]] — ConvenciÃ³n variables de entorno  (category: arquitectura · updated: 2026-08-18)
 <!-- /AUTO -->
 
 ## Relacionado
 
-- [[OpenBrainCode]] â€” hub general.
+- [[OpenBrainCode]] — hub general.
 
 
 

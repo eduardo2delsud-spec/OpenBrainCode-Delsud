@@ -39,4 +39,4 @@ Detalles que lo hacen viable:
 ## Relacionado
 
 - [[Brain/Errores/return-await-tx-impide-fase-local-saga]] — gotcha de implementación.
-- [[Patrones/Convencion variables de entorno]] — contexto del mismo servicio.
+- [[Patrones/convencion-variables-de-entorno]] — contexto del mismo servicio.

@@ -3,12 +3,13 @@ type: acierto
 category: config
 project: gestion-desarrollos-back
 date: 2026-08-18
+updated: 2026-08-26
 tags: [acierto, env, config, joi, centralizacion]
 ---
 
 # Env centralizado en config (Joi fail-fast) + AWS opcional en dev
 
-> Registro crudo del acierto. Versión curada como patrón: [[Patrones/Convencion variables de entorno]].
+> Registro crudo del acierto. Versión curada como patrón: [[Patrones/convencion-variables-de-entorno]].
 
 ## Síntesis
 
