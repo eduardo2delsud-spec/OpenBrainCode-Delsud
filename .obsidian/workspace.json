@@ -195,8 +195,7 @@
       "daily-notes:Abrir la nota de hoy": false,
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
-      "bases:Crear nueva base": false,
-      "templater-obsidian:Templater": false
+      "bases:Crear nueva base": false
     }
   },
   "active": "d17239a4d56ef6ed",
