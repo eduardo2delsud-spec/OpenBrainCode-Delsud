@@ -1,4 +1,4 @@
----
+ï»¿---
 type: proyecto
 project: gestion-desarrollos-back
 path: C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos-back
@@ -15,28 +15,28 @@ updated: 2026-08-20
 
 # gestion-desarrollos-back
 
-> Backend del sistema de Gestión de Desarrollos de Grupodelsud: reservas, contratos, cuotas, caja y flujo de cobranza, integrado con el CRM inmobiliario.
+> Backend del sistema de GestiÃ³n de Desarrollos de Grupodelsud: reservas, contratos, cuotas, caja y flujo de cobranza, integrado con el CRM inmobiliario.
 
-## Qué hace
+## QuÃ© hace
 
-API REST (Express 5 + TypeScript + Drizzle ORM) sobre **MySQL dual** (DB local de gestión + DB del CRM como referencia/escrituras acotadas). Cubre el ciclo de reservas y certificación de boletos, contratos y refinanciación, cuotas/pagos, caja y cobranza, dashboard, lotes, IPC, reclamos, stock, notificaciones, historial, email (SendGrid) y almacenamiento S3. Prefijo `/api/v1`, puerto `4001`.
+API REST (Express 5 + TypeScript + Drizzle ORM) sobre **MySQL dual** (DB local de gestiÃ³n + DB del CRM como referencia/escrituras acotadas). Cubre el ciclo de reservas y certificaciÃ³n de boletos, contratos y refinanciaciÃ³n, cuotas/pagos, caja y cobranza, dashboard, lotes, IPC, reclamos, stock, notificaciones, historial, email (SendGrid) y almacenamiento S3. Prefijo `/api/v1`, puerto `4001`.
 
 ## Estado actual
 
-En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). Últimas versiones orientadas a optimización de queries (fin de N+1, batch, cache TTL, índices) — ver CHANGELOG.
+En desarrollo / mantenido. DocumentaciÃ³n centralizada en `docs/` (2026-08-14). Ãšltimas versiones orientadas a optimizaciÃ³n de queries (fin de N+1, batch, cache TTL, Ã­ndices) â€” ver CHANGELOG.
 
 ## Stack
 
-| Capa | Tecnología | Detalle |
+| Capa | TecnologÃ­a | Detalle |
 |------|-----------|---------|
 | Backend | Node.js 20+ / Express 5 / TypeScript 5 | API REST, `/api/v1`, puerto 4001 |
 | Persistencia | Drizzle ORM + mysql2 | MySQL dual: local (`gestion_desarrollos_{dev,test,prod}`) + CRM |
 | Auth | JWT + bcryptjs | `verifyAccessToken` + RBAC (`requireRole`) |
-| Validación | Joi | `validateSchema` + fail-fast de env |
+| ValidaciÃ³n | Joi | `validateSchema` + fail-fast de env |
 | Integraciones | AWS S3, SendGrid, node-cron | Presigned URLs, email transaccional, cron diario 00:01 |
 | Calidad | Biome, esbuild + tsc-alias | lint/format/check, build |
 
-## Comandos útiles
+## Comandos Ãºtiles
 
 ```bash
 npm run dev              # desarrollo (tsx watch)
@@ -64,7 +64,7 @@ top_folders:
 
 ## Servicios y puertos
 
-| Servicio | Puerto | Descripción |
+| Servicio | Puerto | DescripciÃ³n |
 |----------|--------|-------------|
 | gestion-desarrollos-back | 4001 | API Express (`/api/v1`) |
 
@@ -73,10 +73,10 @@ top_folders:
 - (sin agentes opencode)
 <!-- /AUTO -->
 
-## Documentación
+## DocumentaciÃ³n
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, módulos, endpoints, base de datos, diagramas ER, integraciones, entorno.
-- `README.md` / `CHANGELOG.md` — del repo.
+- `docs/` â€” documentaciÃ³n centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos-back\docs\README.md`): arquitectura, mÃ³dulos, endpoints, base de datos, diagramas ER, integraciones, entorno.
+- `README.md` / `CHANGELOG.md` â€” del repo.
 
 ## Conceptos que usa
 
@@ -84,23 +84,23 @@ top_folders:
 
 ## Patrones que sigue
 
-- [[Patrones/convencion-variables-de-entorno]] — `config.ts` centraliza y valida env con Joi (fail-fast), `AWS_*` opcional en dev, matriz por ambiente en `docs/entorno.md` (2026-08-18).
+- [[Patrones/convencion-variables-de-entorno]] â€” `config.ts` centraliza y valida env con Joi (fail-fast), `AWS_*` opcional en dev, matriz por ambiente en `docs/entorno.md` (2026-08-18).
 
 ## Decisiones clave
 
-- **Atomicidad dual-DB con saga CRM-first** (2026-08-20, cierre de los hallazgos 4.1–4.4): toda operación que escribe en DB local + CRM corre como saga — fase CRM (`crmDb.transaction`) con snapshot previo ? fase local (`db.transaction` propia) ? compensación exhaustiva desde el snapshot si la local falla; `FOR UPDATE` + re-check para disponibilidad de lotes. Detalle en [[Lecciones/atomicidad-dual-db-saga-crm-first]] y el worklog 2026-08-20.
+- **Atomicidad dual-DB con saga CRM-first** (2026-08-20, cierre de los hallazgos 4.1â€“4.4): toda operaciÃ³n que escribe en DB local + CRM corre como saga â€” fase CRM (`crmDb.transaction`) con snapshot previo â†’ fase local (`db.transaction` propia) â†’ compensaciÃ³n exhaustiva desde el snapshot si la local falla; `FOR UPDATE` + re-check para disponibilidad de lotes. Detalle en [[Lecciones/atomicidad-dual-db-saga-crm-first]] y el worklog 2026-08-20.
 
 ## Lecciones
 
-- [[Lecciones/atomicidad-dual-db-saga-crm-first]] — patrón saga CRM-first para atomicidad entre dos MySQL independientes.
+- [[Lecciones/atomicidad-dual-db-saga-crm-first]] â€” patrÃ³n saga CRM-first para atomicidad entre dos MySQL independientes.
 
-## Dónde buscar más
+## DÃ³nde buscar mÃ¡s
 
-- `docs/` del servicio (arquitectura, módulos, endpoints, base de datos, integraciones, entorno).
-- `postman/DESARROLLOS-GESTION.postman_collection.json` — colección de la API.
+- `docs/` del servicio (arquitectura, mÃ³dulos, endpoints, base de datos, integraciones, entorno).
+- `postman/DESARROLLOS-GESTION.postman_collection.json` â€” colecciÃ³n de la API.
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-20]] — atomicidad dual-DB: saga CRM-first en cancelaciones/devoluciones/completaciones de reservas, `editReservation`, `createNewReservation`, `externalSold`, `certifyCancel`, `addDocumentToBooking`, `addAttachment`; nuevo `src/core/sagas.ts`; helpers tx-aware.
-- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] — estandarización de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md` + diagramas entidad-relación en `docs/diagrams.md` (ER DB local, ER CRM, puente local?CRM).
-- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] — documentación centralizada + README.
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-20]] â€” atomicidad dual-DB: saga CRM-first en cancelaciones/devoluciones/completaciones de reservas, `editReservation`, `createNewReservation`, `externalSold`, `certifyCancel`, `addDocumentToBooking`, `addAttachment`; nuevo `src/core/sagas.ts`; helpers tx-aware.
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-18]] â€” estandarizaciÃ³n de variables de entorno: `.env.example`/`.env` limpiados (obsoletas eliminadas, faltantes documentadas), `AWS_*` opcional en development (boot local sin credenciales S3), acceso centralizado en `config` (sin `process.env` disperso), matriz por ambiente en `docs/entorno.md` + diagramas entidad-relaciÃ³n en `docs/diagrams.md` (ER DB local, ER CRM, puente localâ†”CRM).
+- [[Proyectos/Desarrollos/gestion-desarrollos-back/Worklog/2026-08-14]] â€” documentaciÃ³n centralizada + README.

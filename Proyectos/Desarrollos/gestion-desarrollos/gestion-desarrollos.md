@@ -1,4 +1,4 @@
----
+ï»¿---
 type: proyecto
 project: gestion-desarrollos
 path: C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos
@@ -15,33 +15,33 @@ updated: 2026-08-19
 
 # gestion-desarrollos
 
-> SPA de administración de la plataforma de Gestión de Desarrollos de Grupodelsud (React 18 + Vite 5 + MUI 7), que consume `gestion-desarrollos-back`.
+> SPA de administraciÃ³n de la plataforma de GestiÃ³n de Desarrollos de Grupodelsud (React 18 + Vite 5 + MUI 7), que consume `gestion-desarrollos-back`.
 
-## Qué hace
+## QuÃ© hace
 
-Panel de administración con dos áreas — **Administración** (clientes, reservas, boletos, lotes, caja, usuarios) y **Cobranza** (caja, stock, clientes, índices/IPC) — sobre la API REST de `gestion-desarrollos-back` (`/api/v1`, puerto 4001). Estado de servidor con TanStack Query, estado local con Zustand/Context, UI con MUI 7.
+Panel de administraciÃ³n con dos Ã¡reas â€” **AdministraciÃ³n** (clientes, reservas, boletos, lotes, caja, usuarios) y **Cobranza** (caja, stock, clientes, Ã­ndices/IPC) â€” sobre la API REST de `gestion-desarrollos-back` (`/api/v1`, puerto 4001). Estado de servidor con TanStack Query, estado local con Zustand/Context, UI con MUI 7.
 
 ## Estado actual
 
-En desarrollo / mantenido. Documentación centralizada en `docs/` (2026-08-14). El `docs/` previo se limpió en el commit `c8e9dfd`.
+En desarrollo / mantenido. DocumentaciÃ³n centralizada en `docs/` (2026-08-14). El `docs/` previo se limpiÃ³ en el commit `c8e9dfd`.
 
 ## Stack
 
-| Capa | Tecnología | Detalle |
+| Capa | TecnologÃ­a | Detalle |
 |------|-----------|---------|
 | Frontend | React 18 / Vite 5 / MUI 7 | SPA, lazy loading, chunk splitting (terser) |
 | Estado servidor | TanStack Query 5 | staleTime 5 min, retry sin 401/403 |
 | Estado local | Zustand + React Context | usersStore, authContext, sideNavContext |
 | Routing | React Router 7 | createBrowserRouter |
-| Formularios | Formik + Yup | validación |
-| HTTP | Axios | interceptor JWT, redirección a /login |
+| Formularios | Formik + Yup | validaciÃ³n |
+| HTTP | Axios | interceptor JWT, redirecciÃ³n a /login |
 | Calidad | ESLint 9 (flat) + Prettier | lint/format |
 
-## Comandos útiles
+## Comandos Ãºtiles
 
 ```bash
 npm run dev            # desarrollo (Vite)
-npm run build          # build producción (chunk splitting)
+npm run build          # build producciÃ³n (chunk splitting)
 npm run lint           # ESLint
 npm run format         # Prettier
 ```
@@ -59,7 +59,7 @@ top_folders:
 
 ## Servicios y puertos
 
-| Servicio | Puerto | Descripción |
+| Servicio | Puerto | DescripciÃ³n |
 |----------|--------|-------------|
 | gestion-desarrollos (SPA) | 5173 (dev) | Frontend Vite; consume back en 4001 |
 
@@ -68,10 +68,10 @@ top_folders:
 - (sin agentes opencode)
 <!-- /AUTO -->
 
-## Documentación
+## DocumentaciÃ³n
 
-- `docs/` — documentación centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos\docs\README.md`): arquitectura, routing, módulos, data layer, API/integración, deployment.
-- `README.md` / `CHANGELOG.md` — del repo.
+- `docs/` â€” documentaciÃ³n centralizada del servicio (en `C:\Users\eduar\OneDrive\Desktop\DelSud\Desarrollos\gestion-desarrollos\docs\README.md`): arquitectura, routing, mÃ³dulos, data layer, API/integraciÃ³n, deployment.
+- `README.md` / `CHANGELOG.md` â€” del repo.
 
 ## Conceptos que usa
 
@@ -79,7 +79,7 @@ top_folders:
 
 ## Patrones que sigue
 
-- [[Patrones/convencion-variables-de-entorno]] — env vars solo vía `import.meta.env.VITE_*` (nunca `process.env`), documentadas en `.env.example` y `docs/deployment.md` (2026-08-18).
+- [[Patrones/convencion-variables-de-entorno]] â€” env vars solo vÃ­a `import.meta.env.VITE_*` (nunca `process.env`), documentadas en `.env.example` y `docs/deployment.md` (2026-08-18).
 
 ## Decisiones clave
 
@@ -89,12 +89,12 @@ top_folders:
 
 - (por completar)
 
-## Dónde buscar más
+## DÃ³nde buscar mÃ¡s
 
-- `docs/` del servicio (arquitectura, routing, módulos, data layer, API/integración, deployment).
+- `docs/` del servicio (arquitectura, routing, mÃ³dulos, data layer, API/integraciÃ³n, deployment).
 - Backend consumido: `gestion-desarrollos-back`.
 
 ## Historial (worklog)
 
-- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-18]] — limpieza de dead code del frontend (archivos muertos, barrels huérfanos, assets de `public/` sin uso, `@mui/system` removido, `globals` agregado, hook `useClientDebtSummary` eliminado) + optimización de chunk splitting: `manualChunks` sin `pdfmake`/`charts`/`reactCharts` y `sideNav` sin barrel ? `pdfmake`/`vfs_fonts`/`react-apexcharts` lazy real, arranque -77% gzip (~298 kB vs ~1322 kB) + estandarización de variables de entorno: `VITE_AWS_BUCKET_URL` documentada (fallback bucket real `desarrollos-br/desarrollos-crm/`), `VITE_APP_ENVIROMENT` eliminada, unificado `import.meta.env.VITE_*`, fallback de `VITE_URL_API` ? `:4001`.
-- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] — documentación centralizada + README + resolución de conflicto de changelog + limpieza de dependencias sin uso.
+- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-18]] â€” limpieza de dead code del frontend (archivos muertos, barrels huÃ©rfanos, assets de `public/` sin uso, `@mui/system` removido, `globals` agregado, hook `useClientDebtSummary` eliminado) + optimizaciÃ³n de chunk splitting: `manualChunks` sin `pdfmake`/`charts`/`reactCharts` y `sideNav` sin barrel â†’ `pdfmake`/`vfs_fonts`/`react-apexcharts` lazy real, arranque -77% gzip (~298 kB vs ~1322 kB) + estandarizaciÃ³n de variables de entorno: `VITE_AWS_BUCKET_URL` documentada (fallback bucket real `desarrollos-br/desarrollos-crm/`), `VITE_APP_ENVIROMENT` eliminada, unificado `import.meta.env.VITE_*`, fallback de `VITE_URL_API` â†’ `:4001`.
+- [[Proyectos/Desarrollos/gestion-desarrollos/Worklog/2026-08-14]] â€” documentaciÃ³n centralizada + README + resoluciÃ³n de conflicto de changelog + limpieza de dependencias sin uso.
