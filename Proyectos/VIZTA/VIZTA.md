@@ -17,7 +17,7 @@ tags: [proyecto, inmobiliario, crm, pbl, fintech, postgresql]
 ## Estado actual
 
 - **Producto en definición.** Fuente canónica: `ViztaDocs/PBL VIZTA - v0.3 04_08_2026.md` (revisado el 18/08/2026, v0.3.1).
-- **Schema canónico:** `ViztaDocs/Schema/vizta-dbdiagram.dbml` — **49 tablas PostgreSQL** (26/08/2026), 5 schemas lógicos. Documentado además en `ViztaDocs/DER VIZTA - Documento Completo.md` + DER simplificado en PNG.
+- **Schema canónico:** `ViztaDocs/Schema/vizta-dbdiagram.dbml` — **52 tablas PostgreSQL** (26/08/2026), 5 schemas lógicos. Documentado además en `ViztaDocs/DER VIZTA - Documento Completo.md` + DER simplificado en PNG.
 - **Decisión de DB:** una sola PostgreSQL reemplaza ambas MySQL ([[Decisiones/ADR-0010 Consolidacion a PostgreSQL unica|ADR-0010]], aceptada). Schema nuevo desde cero.
 - **Flujo del Asesor documentado** (26/08): `ViztaDocs/Flujos/Flujo Asesor.md` v1.1 — 7 etapas mapeadas a las tablas del DBML, con diagramas ER por etapa y secuencia de reserva con pago verificado.
 - Prioridad actual: **Fase 1** — corrección y definición de los diseños del CRM del Asesor; próximos flujos: Administración y Cobranzas (misma estructura).
@@ -36,7 +36,7 @@ VIZTA organiza la actividad comercial de venta y financiación de terrenos/lotes
 |------|-----------|---------|
 | Frontend (planificado) | React + Vite + JavaScript | SPA CRM del asesor + Admin + Cobranzas; TanStack Query + Zustand + MUI |
 | Backend (planificado) | Express 5 + TypeScript strict | Drizzle ORM + Joi + Biome; JWT |
-| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 49 tablas, 5 schemas |
+| Base de datos | **PostgreSQL** (única) | [[Conceptos/base-de-datos-unificada]] — consolida ambas MySQL; 52 tablas, 5 schemas |
 | ORM | Drizzle ORM | dialect `pg`, driver `pg` (node-postgres) |
 | Pagos | Mercado Pago / pasarela | Reserva se confirma solo con pago verificado; sin validación manual de Admin |
 
@@ -47,7 +47,7 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ├── ViztaDocs/                  ← documentación del producto
 │   ├── PBL VIZTA - v0.3 04_08_2026.md   ← product backlog (fuente de la verdad)
 │   ├── DER VIZTA - Documento Completo.md ← diagrama entidad-relación
-│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (49 tablas, 26/08)
+│   ├── Schema/vizta-dbdiagram.dbml       ← schema canónico (52 tablas, 26/08)
 │   ├── Flujos/Flujo Asesor.md            ← flujo del asesor v1.1 (26/08)
 │   ├── Flujos/Flujo Administración.md    ← flujo de administración v1.0 (26/08)
 │   ├── Flujos/Flujo Cobranzas.md         ← flujo de cobranzas v1.0 (26/08)
@@ -83,7 +83,8 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 - [[Decisiones/ADR-0012 Tabla states para pipeline de ventas|ADR-0012]] — Tabla states para pipeline de ventas (aceptada)
 - [[Decisiones/ADR-0013 Eliminación de permuta|ADR-0013]] — Eliminación de permuta (aceptada)
 - [[Decisiones/ADR-0014 Tabla publications y merge developers-sellers|ADR-0014]] — Tabla publications y merge developers→sellers (aceptada)
-- [[Decisiones/ADR-0015 Auditoría y correcciones de integridad|ADR-0015]] — Auditoría completa: Refs, FKs, índices, soft-delete, notifications FKs (aceptada)
+- [[Decisiones/ADR-0015 Auditoría y correcciones de integridad del DBML|ADR-0015]] — Auditoría completa: Refs, FKs, índices, soft-delete, notifications FKs (aceptada)
+- [[Decisiones/ADR-0016 Tabla commission_rules para reglas de comisión de asesores|ADR-0016]] — Tabla commission_rules para reglas de comisión de asesores (aceptada)
 
 ## Lecciones
 
@@ -98,7 +99,7 @@ Vizta/                          ← workspace del proyecto (C:\Users\eduar\OneDr
 ## Dónde buscar más
 
 - `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\PBL VIZTA - v0.3 04_08_2026.md` — PBL (fuente canónica)
-- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Schema\vizta-dbdiagram.dbml` — schema canónico (47 tablas, DBML)
+- `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Schema\vizta-dbdiagram.dbml` — schema canónico (49 tablas, DBML)
 - `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\DER VIZTA - Documento Completo.md` — DER completo documentado
 - `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Flujos\Flujo Asesor.md` — flujo del asesor v1.1
 - `C:\Users\eduar\OneDrive\Desktop\DelSud\Vizta\ViztaDocs\Plan Rol Asesos VIZTA.md` — arquitectura y fases del rol asesor

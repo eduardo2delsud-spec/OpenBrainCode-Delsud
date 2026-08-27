@@ -1,4 +1,4 @@
----
+﻿---
 type: decision
 status: aceptada
 accepted: 2026-08-26
@@ -16,7 +16,15 @@ Aceptada 2026-08-26 por usuario
 
 Se realizó una auditoría completa del schema DBML de VIZTA (47 tablas) que reveló múltiples inconsistencias de modelado, FKs faltantes, índices incompletos y restricciones de negocio no documentadas.
 
-## Cambios realizados
+## Opciones consideradas
+
+1. **Corregir incremental** — arreglar errores puntuales, sin cambiar la estructura
+2. **Reescribir desde cero** — aprovechar para replantear el modelo
+3. **Auditoría y corrección integral** (elegida) — revisar todo, corregir inconsistencias y documentar reglas de negocio
+
+## Decisión
+
+Se realizó una auditoría completa con correcciones puntuales. Los cambios principales se detallan a continuación.
 
 ### 1. Refs inconsistentes (nullable vs obligatoria)
 - `bookings.seller_id >?` (nullable) — una reserva puede no tener vendedor
@@ -62,6 +70,12 @@ Se realizó una auditoría completa del schema DBML de VIZTA (47 tablas) que rev
 ## Proyectos que la aplican
 
 - [[Proyectos/VIZTA]]
+
+## Historial de status
+
+| Fecha | Estado |
+|-------|--------|
+| 2026-08-26 | Aceptada |
 
 ## Relacionado
 

@@ -1,4 +1,4 @@
----
+﻿---
 type: decision
 status: aceptada
 accepted: 2026-08-26
@@ -37,6 +37,12 @@ VIZTA tiene un portal público donde los propietarios/vendedores publican terren
 ## Proyectos que la aplican
 
 - [[Proyectos/VIZTA]]
+
+## Historial de status
+
+| Fecha | Estado |
+|-------|--------|
+| 2026-08-26 | Aceptada |
 
 ## Relacionado
 

@@ -1,4 +1,4 @@
----
+﻿---
 type: decision
 status: aceptada
 accepted: 2026-08-26
@@ -38,6 +38,12 @@ Eliminar completamente permuta del modelo:
 ## Proyectos que la aplican
 
 - [[Proyectos/VIZTA]]
+
+## Historial de status
+
+| Fecha | Estado |
+|-------|--------|
+| 2026-08-26 | Aceptada |
 
 ## Relacionado
 

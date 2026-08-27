@@ -1,4 +1,4 @@
----
+﻿---
 type: decision
 status: aceptada
 accepted: 2026-08-26
@@ -39,6 +39,12 @@ Cada venta de un lote genera una comisión para el asesor participante. El porce
 ## Proyectos que la aplican
 
 - [[Proyectos/VIZTA]]
+
+## Historial de status
+
+| Fecha | Estado |
+|-------|--------|
+| 2026-08-26 | Aceptada |
 
 ## Relacionado
 
